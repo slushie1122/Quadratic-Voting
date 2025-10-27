@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>制度的陷阱｜策展互動體驗</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <header class="hero" id="hero">
+    <div class="hero__content">
+      <p class="hero__badge">制度的陷阱｜策展互動體驗</p>
+      <h1>制度的陷阱：從遊戲看見國家與社會的失敗</h1>
+      <p>
+        這是一場結合線上互動與實體展演的制度模擬。從議題導入、平方投票到反思行動，邀請你親身感受制度如何塑造我們，也讓你的選擇反過來改寫制度。
+      </p>
+      <div class="hero__actions">
+        <button class="cta" type="button" data-action="start-experience">開始探索</button>
+        <a class="ghost" href="https://hackmd.io/@slushie1122/SJXPxOfCgg" target="_blank" rel="noreferrer">閱讀策展研究</a>
+      </div>
+    </div>
+    <figure class="hero__visual" aria-hidden="true">
+      <div class="hero__city"></div>
+      <figcaption>制度裂縫｜Visual mock</figcaption>
+    </figure>
+  </header>
+
+  <aside class="timeline" aria-label="互動階段指示">
+    <ol>
+      <li class="timeline__item timeline__item--active" data-stage-index="0"><span>議題導入</span></li>
+      <li class="timeline__item" data-stage-index="1"><span>平方投票</span></li>
+      <li class="timeline__item" data-stage-index="2"><span>事件干預</span></li>
+      <li class="timeline__item" data-stage-index="3"><span>制度回饋</span></li>
+      <li class="timeline__item" data-stage-index="4"><span>反思行動</span></li>
+    </ol>
+  </aside>
+
+  <main id="experience" class="experience">
+    <section class="stage stage--intro" data-stage="1">
+      <header class="stage__header">
+        <span class="stage__label">Stage 1｜議題導入</span>
+        <h2>看見制度的裂縫</h2>
+        <p>
+          以展場入口的「制度垃圾場」為靈感，挑選你對爭議議題的直覺反應。這裡僅作為引言與討論素材，
+          <strong>不會改變後續的分數或指數計算</strong>，但會在策展回饋中記錄每位參與者的直覺傾向。
+        </p>
+        <p class="stage__hint">至少挑選三個議題即可開始下一階段。</p>
+      </header>
+
+      <div id="intro-issues" class="issue-grid">
+        <article class="issue-card" data-issue="education">
+          <div class="issue-card__badge">課綱改革</div>
+          <h3>統一課綱與多元教材</h3>
+          <p>
+            國家推動課綱一致化以提升學習成效，卻被批評忽視多元文化。你會優先保障誰的發聲權？
+          </p>
+          <div class="issue-card__decision">
+            <button type="button" data-choice="standard">推動統一標準</button>
+            <button type="button" data-choice="diverse">維持多元文化</button>
+          </div>
+        </article>
+
+        <article class="issue-card" data-issue="environment">
+          <div class="issue-card__badge">能源轉型</div>
+          <h3>風力發電與離岸漁業</h3>
+          <p>
+            海岸風電擴張帶來綠能，也壓縮漁業生計。你會傾向支持綠能還是守住漁民權益？
+          </p>
+          <div class="issue-card__decision">
+            <button type="button" data-choice="green">推動海岸風電</button>
+            <button type="button" data-choice="fisher">保障漁權補償</button>
+          </div>
+        </article>
+
+        <article class="issue-card" data-issue="tax">
+          <div class="issue-card__badge">稅制正義</div>
+          <h3>富人加稅與維持競爭</h3>
+          <p>
+            政府打算對高收入者加稅以補助弱勢，但企業警告人才將外流。你會怎麼取捨？
+          </p>
+          <div class="issue-card__decision">
+            <button type="button" data-choice="redistribute">加稅專款救助</button>
+            <button type="button" data-choice="incentive">維持誘因競爭</button>
+          </div>
+        </article>
+
+        <article class="issue-card" data-issue="surveillance">
+          <div class="issue-card__badge">科技監控</div>
+          <h3>公共安全與全面監控</h3>
+          <p>
+            政府提出智慧路燈與人臉辨識計畫。安全與隱私的拉鋸戰開打，你會讓城市被全面監控嗎？
+          </p>
+          <div class="issue-card__decision">
+            <button type="button" data-choice="security">優先公共安全</button>
+            <button type="button" data-choice="privacy">守護資料隱私</button>
+          </div>
+        </article>
+
+        <article class="issue-card" data-issue="housing">
+          <div class="issue-card__badge">居住正義</div>
+          <h3>租屋限制與市場自由</h3>
+          <p>
+            觀光熱點房價飆升，社區提案限制短租平台。你願意犧牲旅遊經濟來換取租屋穩定嗎？
+          </p>
+          <div class="issue-card__decision">
+            <button type="button" data-choice="regulate">嚴格租屋限制</button>
+            <button type="button" data-choice="liberalize">尊重市場自由</button>
+          </div>
+        </article>
+
+        <article class="issue-card" data-issue="immigration">
+          <div class="issue-card__badge">移民政策</div>
+          <h3>移工居留與居住環境</h3>
+          <p>
+            產業喊缺工，社會則擔憂基礎設施負荷。你會優先支持長期居留還是維持現有限制？
+          </p>
+          <div class="issue-card__decision">
+            <button type="button" data-choice="open">提高居留配額</button>
+            <button type="button" data-choice="limit">維持現有限制</button>
+          </div>
+        </article>
+
+        <article class="issue-card" data-issue="speech">
+          <div class="issue-card__badge">言論責任</div>
+          <h3>平台責任與政治審查</h3>
+          <p>
+            為了防止假訊息蔓延，政府要求平台在 24 小時內下架爭議內容。這會不會變成政治審查？
+          </p>
+          <div class="issue-card__decision">
+            <button type="button" data-choice="regulate">平台須負責任</button>
+            <button type="button" data-choice="free">捍衛言論自由</button>
+          </div>
+        </article>
+
+        <article class="issue-card" data-issue="healthcare">
+          <div class="issue-card__badge">健康資料</div>
+          <h3>疫苗護照與個人隱私</h3>
+          <p>
+            面對再度爆發的疫情，是否應要求進出公共場域必須出示疫苗證明？
+          </p>
+          <div class="issue-card__decision">
+            <button type="button" data-choice="passport">實施疫苗護照</button>
+            <button type="button" data-choice="voluntary">維持自願接種</button>
+          </div>
+        </article>
+      </div>
+
+      <footer class="stage__footer">
+        <button class="cta" type="button" data-action="to-stage" data-target="2" disabled>前往平方投票模擬器</button>
+      </footer>
+    </section>
+
+    <section class="stage stage--vote" data-stage="2" hidden>
+      <header class="stage__header">
+        <span class="stage__label">Stage 2｜制度模擬</span>
+        <h2>平方投票模擬器</h2>
+        <p>
+          你擁有 <strong>12
+            點政治點數（PP）</strong>。在展場，這些點數化成象徵性的籌碼；在網頁，你可以對課綱一致化、海岸風電、富人加稅、城市監控、租金上限、移工配額、數位言論責任以及健康資料共享等議題投下正票或負票。成本遵循平方函數，每次調整都會顯示該議題累計花費的點數。
+        </p>
+      </header>
+
+      <div class="vote-board">
+        <aside class="vote-board__status">
+          <div class="status-card">
+            <span class="status-card__label">剩餘政治點數（PP）</span>
+            <div class="status-card__value">
+              <span id="pp-remaining-baseline">12</span>
+              <small>/ <span id="pp-total-baseline">12</span></small>
+            </div>
+            <p class="status-card__note">每增加或減少一票的成本為 <code>票數²</code>，花費將自動從你的 PP 中扣除。</p>
+            <p class="status-card__alert" id="baseline-feedback"></p>
+          </div>
+
+          <div class="status-meters">
+            <article class="meter" data-metric="ifi">
+              <header>
+                <span>制度公平指數 IFI</span>
+                <output id="metric-ifi-baseline-value">60</output>
+              </header>
+              <div class="meter__bar">
+                <div class="meter__fill" id="metric-ifi-baseline" style="width: 60%"></div>
+              </div>
+            </article>
+            <article class="meter" data-metric="ssi">
+              <header>
+                <span>社會穩定指數 SSI</span>
+                <output id="metric-ssi-baseline-value">60</output>
+              </header>
+              <div class="meter__bar">
+                <div class="meter__fill" id="metric-ssi-baseline" style="width: 60%"></div>
+              </div>
+            </article>
+            <article class="meter" data-metric="mpi">
+              <header>
+                <span>弱勢參與指數 MPI</span>
+                <output id="metric-mpi-baseline-value">60</output>
+              </header>
+              <div class="meter__bar">
+                <div class="meter__fill" id="metric-mpi-baseline" style="width: 60%"></div>
+              </div>
+            </article>
+          </div>
+        </aside>
+
+        <div class="vote-board__columns" id="vote-columns-baseline"></div>
+      </div>
+
+      <footer class="stage__footer">
+        <button class="ghost" type="button" data-action="restart-experience">重新開始體驗</button>
+        <button class="ghost" type="button" data-action="reset-round" data-round="baseline">重置本輪投票</button>
+        <button class="cta" type="button" data-action="lock-round" data-round="baseline" id="lock-baseline"
+          disabled>鎖定第一輪結果</button>
+      </footer>
+    </section>
+
+    <section class="stage stage--events" data-stage="3" hidden>
+      <header class="stage__header">
+        <span class="stage__label">Stage 3｜事件干預</span>
+        <h2>平方投票模擬器</h2>
+        <p>
+          每位參與者將收到一張隨機事件卡，事件會改變制度條件。請閱讀事件內容後重新配置你的政治點數，看看制度指數如何被拉動。
+        </p>
+      </header>
+
+      <div class="event-deck">
+        <div class="event-deck__controls">
+          <button class="cta" id="draw-event">抽出事件卡</button>
+          <p id="event-summary" class="event-summary">尚未抽事件卡。請先鎖定第一輪結果。</p>
+        </div>
+        <ul class="event-history" id="event-history" aria-live="polite"></ul>
+      </div>
+
+      <div class="post-vote-board" id="post-vote-board" hidden>
+        <div class="vote-board">
+          <aside class="vote-board__status">
+            <div class="status-card">
+              <span class="status-card__label">剩餘政治點數（PP）</span>
+              <div class="status-card__value">
+                <span id="pp-remaining-post">12</span>
+                <small>/ <span id="pp-total-post">12</span></small>
+              </div>
+              <p class="status-card__note">
+                事件已改變制度條件，部份議題的成本或影響可能不同。請重新配置並鎖定結果。
+              </p>
+              <p class="status-card__alert" id="post-feedback"></p>
+            </div>
+
+            <div class="status-meters">
+              <article class="meter" data-metric="ifi-post">
+                <header>
+                  <span>制度公平指數 IFI</span>
+                  <output id="metric-ifi-post-value">60</output>
+                </header>
+                <div class="meter__bar">
+                  <div class="meter__fill" id="metric-ifi-post" style="width: 60%"></div>
+                </div>
+              </article>
+              <article class="meter" data-metric="ssi-post">
+                <header>
+                  <span>社會穩定指數 SSI</span>
+                  <output id="metric-ssi-post-value">60</output>
+                </header>
+                <div class="meter__bar">
+                  <div class="meter__fill" id="metric-ssi-post" style="width: 60%"></div>
+                </div>
+              </article>
+              <article class="meter" data-metric="mpi-post">
+                <header>
+                  <span>弱勢參與指數 MPI</span>
+                  <output id="metric-mpi-post-value">60</output>
+                </header>
+                <div class="meter__bar">
+                  <div class="meter__fill" id="metric-mpi-post" style="width: 60%"></div>
+                </div>
+              </article>
+            </div>
+          </aside>
+
+          <div class="vote-board__columns" id="vote-columns-post"></div>
+        </div>
+      </div>
+
+      <footer class="stage__footer">
+        <button class="ghost" type="button" data-action="restart-experience">重新開始體驗</button>
+        <button class="ghost" type="button" data-action="reset-round" data-round="postEvent" disabled>重置本輪投票</button>
+        <button class="cta" type="button" data-action="lock-round" data-round="postEvent" id="lock-post"
+          disabled>鎖定第二輪結果</button>
+      </footer>
+    </section>
+
+    <section class="stage stage--feedback" data-stage="4" hidden>
+      <header class="stage__header">
+        <span class="stage__label">Stage 4｜制度回饋</span>
+        <h2>群眾共創牆</h2>
+        <p>
+          針對每個議題留下你想推動的調整，以提案卡貼在共創牆。其他參與者可以按下「支持」或「疑慮」，協助主持人快速掌握討論焦點。
+        </p>
+      </header>
+
+      <div class="feedback-board">
+        <div class="idea-legend">
+          <p>選擇一個議題並寫下調整建議，系統會貼到對應欄位，後續可被支持或提出疑慮。</p>
+        </div>
+        <div class="idea-wall" id="idea-wall" aria-live="polite"></div>
+        <form id="idea-form" class="idea-form">
+          <label>
+            <span>選擇議題</span>
+            <select name="topic" id="idea-topic" required></select>
+          </label>
+          <label>
+            <span>提案標題</span>
+            <input type="text" name="title" placeholder="例：建立透明監督機制" required />
+          </label>
+          <label>
+            <span>補充說明</span>
+            <textarea name="description" rows="3" placeholder="簡述這個調整如何修補制度裂縫"></textarea>
+          </label>
+          <div class="idea-form__actions">
+            <button class="ghost" type="reset">清除</button>
+            <button class="cta" type="submit">新增制度調整</button>
+          </div>
+        </form>
+      </div>
+
+      <footer class="stage__footer">
+        <button class="ghost" type="button" data-action="restart-experience">重新開始體驗</button>
+        <button class="cta" type="button" data-action="to-stage" data-target="5">查看社會結局</button>
+      </footer>
+    </section>
+
+    <section class="stage stage--reflection" data-stage="5" hidden>
+      <header class="stage__header">
+        <span class="stage__label">Stage 5｜反思與行動</span>
+        <h2>最終走向哪裡？</h2>
+        <p>
+          根據投票、事件與共創結果，社會可能朝向共榮、僵化或墜入失敗循環。請帶著展場體驗的情緒，在此留下你的行動承諾。
+        </p>
+      </header>
+
+      <article class="outcome-card" id="outcome-card">
+        <header>
+          <p class="outcome-card__label">模擬結果</p>
+          <h3 id="outcome-title">等待分析</h3>
+        </header>
+        <p id="outcome-description">
+          完成前四階段後，我們會分析你的每一個決策，算出這座社會的狀態分支。
+        </p>
+        <div class="outcome-comparison">
+          <section>
+            <h4>事件前</h4>
+            <ul>
+              <li>IFI：<span id="baseline-ifi">—</span></li>
+              <li>SSI：<span id="baseline-ssi">—</span></li>
+              <li>MPI：<span id="baseline-mpi">—</span></li>
+              <li>PP 花費：<span id="baseline-pp-spent">—</span></li>
+            </ul>
+          </section>
+          <section>
+            <h4>事件後</h4>
+            <ul>
+              <li>IFI：<span id="post-ifi">—</span></li>
+              <li>SSI：<span id="post-ssi">—</span></li>
+              <li>MPI：<span id="post-mpi">—</span></li>
+              <li>PP 花費：<span id="post-pp-spent">—</span></li>
+            </ul>
+          </section>
+          <section>
+            <h4>差異</h4>
+            <ul>
+              <li>IFI：<span id="diff-ifi">—</span></li>
+              <li>SSI：<span id="diff-ssi">—</span></li>
+              <li>MPI：<span id="diff-mpi">—</span></li>
+              <li>PP 變化：<span id="diff-pp-spent">—</span></li>
+            </ul>
+          </section>
+        </div>
+      </article>
+
+      <section class="dual-feedback">
+        <div class="feedback-column">
+          <h3>給制度的話</h3>
+          <form id="institution-feedback-form">
+            <label class="feedback-field">
+              <span>留言</span>
+              <textarea name="message" placeholder="例：請建立長期監督機制，讓民間能定期檢視改革進度。" required></textarea>
+            </label>
+            <div class="feedback-actions">
+              <button class="cta" type="submit">送出制度回饋</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="feedback-column">
+          <h3>給策展的話</h3>
+          <form id="exhibition-feedback-form">
+            <label class="feedback-field">
+              <span>留言</span>
+              <textarea name="message" placeholder="例：希望策展增加實際案例，或提供延伸閱讀清單。" required></textarea>
+            </label>
+            <div class="feedback-actions">
+              <button class="cta" type="submit">送出策展回饋</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="quote-gallery" aria-label="制度觀點">
+        <h3>制度思考</h3>
+        <div class="quote-grid">
+          <article class="quote-card">
+            <blockquote>
+              “Institutions form the incentive structure of a society, and the political and economic institutions are
+              the underlying determinants of economic performance.”
+            </blockquote>
+            <p class="quote-card__translation">「制度構成社會的誘因結構，而政治與經濟制度則是經濟表現的根本決定因素。」</p>
+            <cite>Douglass North｜1993 年諾貝爾講座</cite>
+          </article>
+          <article class="quote-card">
+            <blockquote>
+              “The best way to understand human organization is to recognize that all feasible forms of organization are
+              flawed; we then inquire as to which are more flawed than others.”
+            </blockquote>
+            <p class="quote-card__translation">「理解人類組織的最佳方法，是承認所有可行的制度形式都有缺陷；接著問：哪一種的缺陷比較小？」</p>
+            <cite>Oliver Williamson｜2009 年諾貝爾講座</cite>
+          </article>
+          <article class="quote-card">
+            <blockquote>
+              “There is no reason to believe that bureaucrats and politicians are better at solving problems than
+              citizens and private actors.”
+            </blockquote>
+            <p class="quote-card__translation">「沒有理由相信官僚與政治人物一定比公民或私人行動者更能解決問題。」</p>
+            <cite>Elinor Ostrom｜2009 年諾貝爾講座</cite>
+          </article>
+        </div>
+      </section>
+
+      <footer class="stage__footer">
+        <button class="ghost" type="button" data-action="restart-experience">重新開始體驗</button>
+        <p class="closing-quote">
+          “Institutions are the rules of the game in a society or, more formally, the humanly devised constraints that
+          shape human interaction.”<br />
+          「制度是社會中的遊戲規則，或更正式地說，是人為設計的約束，用以形塑人與人之間的互動。」<br />
+          <span>— Douglass North｜1990 年著作</span>
+        </p>
+      </footer>
+    </section>
+  </main>
+
+  <div class="modal" id="event-modal" hidden aria-hidden="true">
+    <div class="modal__backdrop"></div>
+    <article class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <header>
+        <p class="modal__type" id="modal-type"></p>
+        <h3 id="modal-title"></h3>
+      </header>
+      <p id="modal-description"></p>
+      <p class="modal__effect" id="modal-effect"></p>
+      <footer>
+        <button class="cta" id="close-modal" type="button">繼續模擬</button>
+      </footer>
+    </article>
+  </div>
+
+  <button id="open-admin" class="admin-trigger" type="button" aria-label="開啟管理面板">◎</button>
+
+  <div id="admin-overlay" class="admin-overlay" hidden aria-hidden="true">
+    <div class="admin-panel">
+      <header class="admin-panel__header">
+        <h2>策展即時整理</h2>
+        <button id="close-admin" type="button" aria-label="關閉管理面板">×</button>
+      </header>
+      <div class="admin-panel__content" id="admin-content">
+        <p>載入中...</p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>

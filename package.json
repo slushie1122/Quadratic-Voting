@@ -1,0 +1,17 @@
+{
+  "name": "visual-mock-backend",
+  "version": "0.1.0",
+  "description": "API server for the visual mock civic participation tool",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.js",
+    "start": "NODE_ENV=production node src/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "socket.io": "^4.7.5",
+    "uuid": "^9.0.1"
+  }
+}

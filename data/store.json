@@ -1,0 +1,2021 @@
+{
+  "lastUpdated": "2025-10-22T14:00:21.707Z",
+  "issues": [],
+  "proposals": [],
+  "votes": [],
+  "feedback": [],
+  "ideas": [
+    {
+      "id": "dfd34036-8f3f-4a18-9be7-8abf67c46458",
+      "topic": "environment",
+      "title": "漁電共生監測機制",
+      "description": "由漁民與科研團隊共組監測小組，定期發布海域生態與補償金使用情形。",
+      "support": 1,
+      "concern": 2,
+      "createdAt": "2025-10-21T01:44:36.766Z"
+    },
+    {
+      "id": "a5d0408f-94b8-4f85-99ca-e3b6fc3cda59",
+      "topic": "tax",
+      "title": "高收入稅收專款專用",
+      "description": "新增稅收自動撥入弱勢居住補助基金，每季公開支出明細接受公民審計。",
+      "support": 2,
+      "concern": 3,
+      "createdAt": "2025-10-21T01:44:36.766Z"
+    },
+    {
+      "id": "51d7b6e2-2150-4afc-adf4-a5d5a158dd5a",
+      "topic": "surveillance",
+      "title": "監控資料稽核委員會",
+      "description": "成立跨黨派＋民間稽核委員會，審查每一次監控啟用與資料刪除紀錄。",
+      "support": 5,
+      "concern": 4,
+      "createdAt": "2025-10-21T01:44:36.766Z"
+    },
+    {
+      "id": "9a65441d-9370-4837-a5e2-57b3c858522d",
+      "topic": "housing",
+      "title": "社宅合作社自主管理",
+      "description": "社宅住戶可成立合作社管理維護費並參與租金評議，提高透明度與認同感。",
+      "support": 1,
+      "concern": 6,
+      "createdAt": "2025-10-21T01:44:36.766Z"
+    },
+    {
+      "id": "a52d4849-b7d8-4fec-97fb-8bdeac7c86fe",
+      "topic": "immigration",
+      "title": "移工融入支持方案",
+      "description": "設立語言與法律諮詢中心並提供雇主調整補助，促進移工與社區共學共融。",
+      "support": 3,
+      "concern": 4,
+      "createdAt": "2025-10-21T01:44:36.766Z"
+    },
+    {
+      "id": "b339e56f-bc84-4f03-93f1-b9b75319c0a7",
+      "topic": "speech",
+      "title": "平台自律＋公民評議",
+      "description": "要求平台公開審查流程並設公民評議小組，提供申訴與救濟機制。",
+      "support": 0,
+      "concern": 5,
+      "createdAt": "2025-10-21T01:44:36.766Z"
+    },
+    {
+      "id": "decc2f4c-ee3d-424f-b4c8-f5a8c289cfe2",
+      "topic": "healthcare",
+      "title": "健康資料使用揭露",
+      "description": "所有疫苗護照資料調閱必須即時公告用途與保存期限，由公民資料會審查。",
+      "support": 2,
+      "concern": 5,
+      "createdAt": "2025-10-21T01:44:36.766Z"
+    },
+    {
+      "id": "9b5ae598-e399-47dd-8bfb-91cc9043203a",
+      "topic": "education",
+      "title": "課綱透明協作平台",
+      "description": "建立線上協作平台，公開課綱草案並納入地方教師、學生與家長的審議意見。",
+      "support": 0,
+      "concern": 2,
+      "createdAt": "2025-10-21T01:44:36.759Z"
+    }
+  ],
+  "feedbackInstitutional": [],
+  "feedbackExhibition": [
+    {
+      "id": "4aa39eca-dc11-4dcd-b46a-b6bd6472de87",
+      "message": "讚欸",
+      "createdAt": "2025-10-21T02:06:59.855Z"
+    }
+  ],
+  "sessionLogs": [
+    {
+      "id": "0e015ed9-6a1e-4cc3-9dd7-7f4d531b9e62",
+      "createdAt": "2025-10-22T14:00:21.707Z",
+      "preferences": {
+        "environment": "green",
+        "surveillance": "security",
+        "housing": "regulate"
+      },
+      "baseline": {
+        "votes": {
+          "education": 2,
+          "environment": 2,
+          "tax": 2,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 71.66666666666667,
+          "ssi": 57.4,
+          "mpi": 94,
+          "totalCost": 12,
+          "totalPP": 12,
+          "remainingPP": 0
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 2,
+          "environment": 2,
+          "tax": 2,
+          "surveillance": 0,
+          "housing": 1,
+          "immigration": 1,
+          "speech": 1,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 85.03333333333333,
+          "ssi": 54.85,
+          "mpi": 100,
+          "totalCost": 15,
+          "totalPP": 15,
+          "remainingPP": 0
+        },
+        "modifiers": {
+          "ifi": 7,
+          "ssi": 6,
+          "mpi": 9,
+          "ppBonus": 3
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 13.36666666666666,
+        "ssi": -2.549999999999997,
+        "mpi": 6,
+        "ppSpent": 3
+      },
+      "events": [
+        {
+          "id": "citizen-assembly",
+          "title": "公民審議會突破",
+          "type": "正向事件",
+          "effectSummary": "IFI +7、SSI +6、MPI +9、PP +3"
+        }
+      ]
+    },
+    {
+      "id": "1badb896-a18f-4219-9484-4914b67a80ea",
+      "createdAt": "2025-10-21T04:39:19.921Z",
+      "preferences": {
+        "surveillance": "security",
+        "housing": "liberalize",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 3,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 48.5,
+          "ssi": 63.85,
+          "mpi": 19,
+          "totalCost": 9,
+          "totalPP": 12,
+          "remainingPP": 3
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 3,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 50.5,
+          "ssi": 56.85,
+          "mpi": 25,
+          "totalCost": 9,
+          "totalPP": 12,
+          "remainingPP": 3
+        },
+        "modifiers": {
+          "ifi": 2,
+          "ssi": -7,
+          "mpi": 6,
+          "ppBonus": 0
+        },
+        "locked": false
+      },
+      "diff": {
+        "ifi": 2,
+        "ssi": -7,
+        "mpi": 6,
+        "ppSpent": 0
+      },
+      "events": [
+        {
+          "id": "labor-strike",
+          "title": "全國罷工浪潮",
+          "type": "勞動事件",
+          "effectSummary": "SSI -7、MPI +6、IFI +2"
+        }
+      ]
+    },
+    {
+      "id": "7f51e91e-507f-427d-a720-71cc69fc36d6",
+      "createdAt": "2025-10-21T04:38:02.334Z",
+      "preferences": {
+        "immigration": "limit",
+        "speech": "free",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 0,
+          "environment": 3,
+          "tax": 0,
+          "surveillance": 1,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 1,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 56.59090909090909,
+          "ssi": 58.5,
+          "mpi": 70,
+          "totalCost": 11,
+          "totalPP": 12,
+          "remainingPP": 1
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 0,
+          "environment": 3,
+          "tax": 0,
+          "surveillance": 1,
+          "housing": 0,
+          "immigration": 1,
+          "speech": 1,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 60,
+          "ssi": 46.3,
+          "mpi": 75.5,
+          "totalCost": 12,
+          "totalPP": 12,
+          "remainingPP": 0
+        },
+        "modifiers": {
+          "ifi": 0,
+          "ssi": -9,
+          "mpi": -5,
+          "ppBonus": 0
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 3.4090909090909065,
+        "ssi": -12.200000000000003,
+        "mpi": 5.5,
+        "ppSpent": 1
+      },
+      "events": [
+        {
+          "id": "bureaucracy",
+          "title": "官僚延宕",
+          "type": "制度事件",
+          "effectSummary": "SSI -9、MPI -5"
+        }
+      ]
+    },
+    {
+      "id": "56daa278-2f43-42e4-9608-b125628834ec",
+      "createdAt": "2025-10-21T04:36:18.624Z",
+      "preferences": {
+        "housing": "regulate",
+        "speech": "regulate",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 3,
+          "environment": 0,
+          "tax": 1,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 52.8,
+          "ssi": 61.7,
+          "mpi": 77.5,
+          "totalCost": 10,
+          "totalPP": 12,
+          "remainingPP": 2
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 3,
+          "environment": 0,
+          "tax": 1,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 52.8,
+          "ssi": 52.7,
+          "mpi": 72.5,
+          "totalCost": 10,
+          "totalPP": 12,
+          "remainingPP": 2
+        },
+        "modifiers": {
+          "ifi": 0,
+          "ssi": -9,
+          "mpi": -5,
+          "ppBonus": 0
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 0,
+        "ssi": -9,
+        "mpi": -5,
+        "ppSpent": 0
+      },
+      "events": [
+        {
+          "id": "bureaucracy",
+          "title": "官僚延宕",
+          "type": "制度事件",
+          "effectSummary": "SSI -9、MPI -5"
+        }
+      ]
+    },
+    {
+      "id": "34a93cc0-f683-4c20-ae8a-6097b823eb42",
+      "createdAt": "2025-10-21T04:11:01.079Z",
+      "preferences": {
+        "environment": "fisher",
+        "surveillance": "privacy",
+        "housing": "regulate"
+      },
+      "baseline": {
+        "votes": {
+          "education": 3,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 48.5,
+          "ssi": 63.85,
+          "mpi": 77.5,
+          "totalCost": 9,
+          "totalPP": 12,
+          "remainingPP": 3
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 3,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 2,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 60.11538461538461,
+          "ssi": 62.65,
+          "mpi": 45.5,
+          "totalCost": 13,
+          "totalPP": 12,
+          "remainingPP": -1
+        },
+        "modifiers": {
+          "ifi": 0,
+          "ssi": 3,
+          "mpi": -8,
+          "ppBonus": 0
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 11.615384615384613,
+        "ssi": -1.2000000000000028,
+        "mpi": -32,
+        "ppSpent": 4
+      },
+      "events": [
+        {
+          "id": "tech-surveillance",
+          "title": "全面科技監控上線",
+          "type": "科技事件",
+          "effectSummary": "SSI +3、MPI -8"
+        }
+      ]
+    },
+    {
+      "id": "3b95544b-54b5-406e-a1f7-540cf7d1e15d",
+      "createdAt": "2025-10-21T04:09:24.325Z",
+      "preferences": {
+        "surveillance": "security",
+        "housing": "regulate",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 3,
+          "environment": 0,
+          "tax": 1,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 52.8,
+          "ssi": 61.7,
+          "mpi": 77.5,
+          "totalCost": 10,
+          "totalPP": 12,
+          "remainingPP": 2
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 3,
+          "environment": 0,
+          "tax": 1,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 56.8,
+          "ssi": 61.7,
+          "mpi": 85.5,
+          "totalCost": 10,
+          "totalPP": 14,
+          "remainingPP": 4
+        },
+        "modifiers": {
+          "ifi": 4,
+          "ssi": 0,
+          "mpi": 8,
+          "ppBonus": 2
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 4,
+        "ssi": 0,
+        "mpi": 8,
+        "ppSpent": 0
+      },
+      "events": [
+        {
+          "id": "citizen-protest",
+          "title": "群眾抗議行動",
+          "type": "社會事件",
+          "effectSummary": "MPI +8、IFI +4、PP +2"
+        }
+      ]
+    },
+    {
+      "id": "f86ed1ad-21a3-4b09-b4fc-aacae50cd727",
+      "createdAt": "2025-10-21T03:49:49.665Z",
+      "preferences": {
+        "immigration": "open",
+        "speech": "free",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 0,
+          "environment": 3,
+          "tax": 0,
+          "surveillance": 1,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 52.8,
+          "ssi": 61.7,
+          "mpi": 79,
+          "totalCost": 10,
+          "totalPP": 12,
+          "remainingPP": 2
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 0,
+          "environment": 3,
+          "tax": 0,
+          "surveillance": 2,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 52.11538461538461,
+          "ssi": 59.65,
+          "mpi": 61,
+          "totalCost": 13,
+          "totalPP": 11,
+          "remainingPP": -2
+        },
+        "modifiers": {
+          "ifi": -8,
+          "ssi": 0,
+          "mpi": -6,
+          "ppBonus": -1
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": -0.684615384615384,
+        "ssi": -2.0500000000000043,
+        "mpi": -18,
+        "ppSpent": 3
+      },
+      "events": [
+        {
+          "id": "elite-meeting",
+          "title": "精英協商會議",
+          "type": "政治事件",
+          "effectSummary": "IFI -8、MPI -6、PP -1"
+        }
+      ]
+    },
+    {
+      "id": "ee8b947d-171d-45c2-aac8-350b601635ce",
+      "createdAt": "2025-10-21T03:45:07.195Z",
+      "preferences": {
+        "immigration": "open",
+        "speech": "regulate",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 3,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 1,
+          "housing": 1,
+          "immigration": 1,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 60,
+          "ssi": 56.35,
+          "mpi": 88,
+          "totalCost": 12,
+          "totalPP": 12,
+          "remainingPP": 0
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 3,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 1,
+          "housing": 1,
+          "immigration": 1,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 60,
+          "ssi": 47.35,
+          "mpi": 83,
+          "totalCost": 12,
+          "totalPP": 12,
+          "remainingPP": 0
+        },
+        "modifiers": {
+          "ifi": 0,
+          "ssi": -9,
+          "mpi": -5,
+          "ppBonus": 0
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 0,
+        "ssi": -9,
+        "mpi": -5,
+        "ppSpent": 0
+      },
+      "events": [
+        {
+          "id": "bureaucracy",
+          "title": "官僚延宕",
+          "type": "制度事件",
+          "effectSummary": "SSI -9、MPI -5"
+        }
+      ]
+    },
+    {
+      "id": "c6ff99d0-8e6e-43ee-9182-ffa40a65d1f3",
+      "createdAt": "2025-10-21T03:43:50.486Z",
+      "preferences": {
+        "housing": "liberalize",
+        "immigration": "open",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 3,
+          "speech": 0,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 52.8,
+          "ssi": 57.5,
+          "mpi": 96.7,
+          "totalCost": 10,
+          "totalPP": 12,
+          "remainingPP": 2
+        },
+        "modifiers": null,
+        "locked": false
+      },
+      "postEvent": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 3,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 48.5,
+          "ssi": 60.7,
+          "mpi": 86.5,
+          "totalCost": 9,
+          "totalPP": 12,
+          "remainingPP": 3
+        },
+        "modifiers": {
+          "ifi": 0,
+          "ssi": 0,
+          "mpi": 0,
+          "ppBonus": 0
+        },
+        "locked": false
+      },
+      "diff": {
+        "ifi": -4.299999999999997,
+        "ssi": 3.200000000000003,
+        "mpi": -10.200000000000003,
+        "ppSpent": -1
+      },
+      "events": []
+    },
+    {
+      "id": "16b5e17f-45d1-458b-adbc-3e12346b1059",
+      "createdAt": "2025-10-21T03:38:29.267Z",
+      "preferences": {
+        "surveillance": "privacy",
+        "housing": "regulate",
+        "immigration": "open"
+      },
+      "baseline": {
+        "votes": {
+          "education": 1,
+          "environment": 0,
+          "tax": 3,
+          "surveillance": 0,
+          "housing": 1,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 60,
+          "ssi": 56.35,
+          "mpi": 84.7,
+          "totalCost": 12,
+          "totalPP": 12,
+          "remainingPP": 0
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 1,
+          "environment": 0,
+          "tax": 3,
+          "surveillance": 1,
+          "housing": 1,
+          "immigration": 1,
+          "speech": 1,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 75.7,
+          "ssi": 53.800000000000004,
+          "mpi": 83.2,
+          "totalCost": 15,
+          "totalPP": 15,
+          "remainingPP": 0
+        },
+        "modifiers": {
+          "ifi": 7,
+          "ssi": 6,
+          "mpi": 9,
+          "ppBonus": 3
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 15.700000000000003,
+        "ssi": -2.549999999999997,
+        "mpi": -1.5,
+        "ppSpent": 3
+      },
+      "events": [
+        {
+          "id": "citizen-assembly",
+          "title": "公民審議會突破",
+          "type": "正向事件",
+          "effectSummary": "IFI +7、SSI +6、MPI +9、PP +3"
+        }
+      ]
+    },
+    {
+      "id": "a1beee2a-13ae-4a75-9ddf-465c0df50f52",
+      "createdAt": "2025-10-21T02:52:10.323Z",
+      "preferences": {
+        "housing": "liberalize",
+        "speech": "regulate",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 3,
+          "environment": 1,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 56.59090909090909,
+          "ssi": 58.5,
+          "mpi": 99.7,
+          "totalCost": 11,
+          "totalPP": 12,
+          "remainingPP": 1
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 3,
+          "environment": 1,
+          "tax": 0,
+          "surveillance": 1,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 52,
+          "ssi": 56.35,
+          "mpi": 81.7,
+          "totalCost": 12,
+          "totalPP": 11,
+          "remainingPP": -1
+        },
+        "modifiers": {
+          "ifi": -8,
+          "ssi": 0,
+          "mpi": -6,
+          "ppBonus": -1
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": -4.5909090909090935,
+        "ssi": -2.1499999999999986,
+        "mpi": -18,
+        "ppSpent": 1
+      },
+      "events": [
+        {
+          "id": "elite-meeting",
+          "title": "精英協商會議",
+          "type": "政治事件",
+          "effectSummary": "IFI -8、MPI -6、PP -1"
+        }
+      ]
+    },
+    {
+      "id": "0e1de549-9e08-4a1a-95ec-679d76f6ba9d",
+      "createdAt": "2025-10-21T02:51:02.390Z",
+      "preferences": {
+        "housing": "liberalize",
+        "immigration": "open",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 45.5,
+          "ssi": 66.8,
+          "mpi": 65.2,
+          "totalCost": 1,
+          "totalPP": 12,
+          "remainingPP": 11
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 3,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 56.8,
+          "ssi": 57.5,
+          "mpi": 46.2,
+          "totalCost": 10,
+          "totalPP": 14,
+          "remainingPP": 4
+        },
+        "modifiers": {
+          "ifi": 4,
+          "ssi": 0,
+          "mpi": 8,
+          "ppBonus": 2
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 11.299999999999997,
+        "ssi": -9.299999999999997,
+        "mpi": -19,
+        "ppSpent": 9
+      },
+      "events": [
+        {
+          "id": "citizen-protest",
+          "title": "群眾抗議行動",
+          "type": "社會事件",
+          "effectSummary": "MPI +8、IFI +4、PP +2"
+        }
+      ]
+    },
+    {
+      "id": "3aef1932-dcad-4159-836c-1d6a2f956744",
+      "createdAt": "2025-10-21T02:47:51.946Z",
+      "preferences": {
+        "environment": "fisher",
+        "tax": "incentive",
+        "immigration": "limit"
+      },
+      "baseline": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 2,
+          "housing": 1,
+          "immigration": -2,
+          "speech": 1,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 63.31818181818182,
+          "ssi": 42.74999999999999,
+          "mpi": 34.2,
+          "totalCost": 11,
+          "totalPP": 12,
+          "remainingPP": 1
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 2,
+          "housing": 2,
+          "immigration": -2,
+          "speech": 1,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 74,
+          "ssi": 48.41428571428571,
+          "mpi": 55.2,
+          "totalCost": 14,
+          "totalPP": 15,
+          "remainingPP": 1
+        },
+        "modifiers": {
+          "ifi": 7,
+          "ssi": 6,
+          "mpi": 9,
+          "ppBonus": 3
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 10.68181818181818,
+        "ssi": 5.664285714285718,
+        "mpi": 21,
+        "ppSpent": 3
+      },
+      "events": [
+        {
+          "id": "citizen-assembly",
+          "title": "公民審議會突破",
+          "type": "正向事件",
+          "effectSummary": "IFI +7、SSI +6、MPI +9、PP +3"
+        }
+      ]
+    },
+    {
+      "id": "88a4ce7e-8f30-410a-ab6d-82e54294a1df",
+      "createdAt": "2025-10-21T02:39:12.645Z",
+      "preferences": {
+        "housing": "regulate",
+        "speech": "regulate",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 3,
+          "surveillance": 1,
+          "housing": 1,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 60,
+          "ssi": 56.35,
+          "mpi": 65.2,
+          "totalCost": 12,
+          "totalPP": 12,
+          "remainingPP": 0
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 3,
+          "surveillance": 1,
+          "housing": 1,
+          "immigration": 1,
+          "speech": 1,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 72,
+          "ssi": 54.95,
+          "mpi": 71.7,
+          "totalCost": 14,
+          "totalPP": 14,
+          "remainingPP": 0
+        },
+        "modifiers": {
+          "ifi": 6,
+          "ssi": 5,
+          "mpi": 5,
+          "ppBonus": 2
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 12,
+        "ssi": -1.3999999999999986,
+        "mpi": 6.5,
+        "ppSpent": 2
+      },
+      "events": [
+        {
+          "id": "trust-rebuild",
+          "title": "制度信任重建",
+          "type": "正向事件",
+          "effectSummary": "IFI +6、SSI +5、MPI +5、PP +2"
+        }
+      ]
+    },
+    {
+      "id": "9ca666cc-9881-4446-b7e5-72397bab1914",
+      "createdAt": "2025-10-21T02:36:19.262Z",
+      "preferences": {
+        "housing": "liberalize",
+        "immigration": "limit",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 1,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 1,
+          "housing": 1,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 71,
+          "ssi": 60.35000000000001,
+          "mpi": 72.7,
+          "totalCost": 4,
+          "totalPP": 12,
+          "remainingPP": 8
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 1,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 1,
+          "housing": 1,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 65,
+          "ssi": 58.35000000000001,
+          "mpi": 68.7,
+          "totalCost": 4,
+          "totalPP": 11,
+          "remainingPP": 7
+        },
+        "modifiers": {
+          "ifi": -6,
+          "ssi": -2,
+          "mpi": -4,
+          "ppBonus": -1
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": -6,
+        "ssi": -2,
+        "mpi": -4,
+        "ppSpent": 0
+      },
+      "events": [
+        {
+          "id": "gov-reform",
+          "title": "政府改革法案",
+          "type": "政治事件",
+          "effectSummary": "IFI -6、MPI -4、SSI -2、PP -1"
+        }
+      ]
+    },
+    {
+      "id": "00c0f139-6f0a-441f-b3fa-f4924efd62fb",
+      "createdAt": "2025-10-21T02:34:48.024Z",
+      "preferences": {
+        "surveillance": "privacy",
+        "housing": "regulate",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 1,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 1,
+          "housing": 3,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 56.59090909090909,
+          "ssi": 59.55,
+          "mpi": 86.5,
+          "totalCost": 11,
+          "totalPP": 12,
+          "remainingPP": 1
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 1,
+          "immigration": 1,
+          "speech": 1,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 67,
+          "ssi": 51.25000000000001,
+          "mpi": 78.7,
+          "totalCost": 4,
+          "totalPP": 12,
+          "remainingPP": 8
+        },
+        "modifiers": {
+          "ifi": -4,
+          "ssi": -7,
+          "mpi": 0,
+          "ppBonus": 0
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 10.409090909090907,
+        "ssi": -8.29999999999999,
+        "mpi": -7.799999999999997,
+        "ppSpent": -7
+      },
+      "events": [
+        {
+          "id": "global-crisis",
+          "title": "全球危機",
+          "type": "外部事件",
+          "effectSummary": "SSI -7、IFI -4，全體票數重置"
+        }
+      ]
+    },
+    {
+      "id": "9cf3c0b8-bc0b-46cf-a08c-449f0ca121d6",
+      "createdAt": "2025-10-21T02:31:24.153Z",
+      "preferences": {
+        "surveillance": "security",
+        "housing": "liberalize",
+        "immigration": "open"
+      },
+      "baseline": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 1,
+          "immigration": 1,
+          "speech": 0,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 67.16666666666667,
+          "ssi": 61.449999999999996,
+          "mpi": 87.7,
+          "totalCost": 3,
+          "totalPP": 12,
+          "remainingPP": 9
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 3,
+          "immigration": 1,
+          "speech": 0,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 59.59090909090909,
+          "ssi": 53.449999999999996,
+          "mpi": 100,
+          "totalCost": 11,
+          "totalPP": 12,
+          "remainingPP": 1
+        },
+        "modifiers": {
+          "ifi": 3,
+          "ssi": -4,
+          "mpi": -2,
+          "ppBonus": 0
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": -7.575757575757578,
+        "ssi": -8,
+        "mpi": 12.299999999999997,
+        "ppSpent": 8
+      },
+      "events": [
+        {
+          "id": "housing-conflict",
+          "title": "公共住房衝突",
+          "type": "社區事件",
+          "effectSummary": "IFI +3、SSI -4、MPI -2"
+        }
+      ]
+    },
+    {
+      "id": "687f7516-9532-4334-bb68-d35e92759f31",
+      "createdAt": "2025-10-21T02:30:39.719Z",
+      "preferences": {
+        "housing": "regulate",
+        "speech": "regulate",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 2,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 47,
+          "ssi": 65.8,
+          "mpi": 31,
+          "totalCost": 4,
+          "totalPP": 12,
+          "remainingPP": 8
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 2,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 51,
+          "ssi": 65.8,
+          "mpi": 39,
+          "totalCost": 4,
+          "totalPP": 14,
+          "remainingPP": 10
+        },
+        "modifiers": {
+          "ifi": 4,
+          "ssi": 0,
+          "mpi": 8,
+          "ppBonus": 2
+        },
+        "locked": false
+      },
+      "diff": {
+        "ifi": 4,
+        "ssi": 0,
+        "mpi": 8,
+        "ppSpent": 0
+      },
+      "events": [
+        {
+          "id": "citizen-protest",
+          "title": "群眾抗議行動",
+          "type": "社會事件",
+          "effectSummary": "MPI +8、IFI +4、PP +2"
+        }
+      ]
+    },
+    {
+      "id": "d324c4a8-c81e-44c0-afa5-9699baedc1dc",
+      "createdAt": "2025-10-21T02:30:29.963Z",
+      "preferences": {
+        "environment": "green",
+        "housing": "regulate",
+        "healthcare": "voluntary"
+      },
+      "baseline": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 1,
+          "immigration": 0,
+          "speech": 1,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 67.16666666666667,
+          "ssi": 61.449999999999996,
+          "mpi": 68.2,
+          "totalCost": 3,
+          "totalPP": 12,
+          "remainingPP": 9
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 1,
+          "surveillance": 3,
+          "housing": 1,
+          "immigration": 0,
+          "speech": 1,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 70.11538461538461,
+          "ssi": 59.14999999999999,
+          "mpi": 41.2,
+          "totalCost": 13,
+          "totalPP": 15,
+          "remainingPP": 2
+        },
+        "modifiers": {
+          "ifi": 7,
+          "ssi": 6,
+          "mpi": 9,
+          "ppBonus": 3
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 2.948717948717942,
+        "ssi": -2.3000000000000043,
+        "mpi": -27,
+        "ppSpent": 10
+      },
+      "events": [
+        {
+          "id": "citizen-assembly",
+          "title": "公民審議會突破",
+          "type": "正向事件",
+          "effectSummary": "IFI +7、SSI +6、MPI +9、PP +3"
+        }
+      ]
+    },
+    {
+      "id": "aa81f418-a62f-4c0f-8805-fe62fca46d24",
+      "createdAt": "2025-10-21T02:30:00.715Z",
+      "preferences": {
+        "housing": "regulate",
+        "immigration": "open",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 2,
+          "environment": 0,
+          "tax": 1,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 1,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 59.333333333333336,
+          "ssi": 60.45,
+          "mpi": 80.5,
+          "totalCost": 6,
+          "totalPP": 12,
+          "remainingPP": 6
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 2,
+          "healthcare": 2
+        },
+        "metrics": {
+          "ifi": 60,
+          "ssi": 50.4,
+          "mpi": 57.4,
+          "totalCost": 8,
+          "totalPP": 12,
+          "remainingPP": 4
+        },
+        "modifiers": {
+          "ifi": -4,
+          "ssi": -7,
+          "mpi": 0,
+          "ppBonus": 0
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 0.6666666666666643,
+        "ssi": -10.050000000000004,
+        "mpi": -23.1,
+        "ppSpent": 2
+      },
+      "events": [
+        {
+          "id": "global-crisis",
+          "title": "全球危機",
+          "type": "外部事件",
+          "effectSummary": "SSI -7、IFI -4，全體票數重置"
+        }
+      ]
+    },
+    {
+      "id": "d7a1bf43-1538-486f-9c50-c36b92cd2b0e",
+      "createdAt": "2025-10-21T02:27:39.583Z",
+      "preferences": {
+        "housing": "regulate",
+        "immigration": "open",
+        "healthcare": "voluntary"
+      },
+      "baseline": {
+        "votes": {
+          "education": 3,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 1,
+          "housing": 1,
+          "immigration": 0,
+          "speech": 1,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 60,
+          "ssi": 56.35,
+          "mpi": 68.5,
+          "totalCost": 12,
+          "totalPP": 12,
+          "remainingPP": 0
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 3,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 1,
+          "housing": 1,
+          "immigration": 0,
+          "speech": 1,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 66,
+          "ssi": 61.35,
+          "mpi": 73.5,
+          "totalCost": 12,
+          "totalPP": 14,
+          "remainingPP": 2
+        },
+        "modifiers": {
+          "ifi": 6,
+          "ssi": 5,
+          "mpi": 5,
+          "ppBonus": 2
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 6,
+        "ssi": 5,
+        "mpi": 5,
+        "ppSpent": 0
+      },
+      "events": [
+        {
+          "id": "trust-rebuild",
+          "title": "制度信任重建",
+          "type": "正向事件",
+          "effectSummary": "IFI +6、SSI +5、MPI +5、PP +2"
+        }
+      ]
+    },
+    {
+      "id": "37160a01-2b24-4125-b571-6f8cb1a288e7",
+      "createdAt": "2025-10-21T02:21:41.124Z",
+      "preferences": {
+        "education": "standard",
+        "environment": "fisher",
+        "housing": "liberalize"
+      },
+      "baseline": {
+        "votes": {
+          "education": 1,
+          "environment": 0,
+          "tax": 1,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 1,
+          "speech": 1,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 71,
+          "ssi": 59.300000000000004,
+          "mpi": 64,
+          "totalCost": 4,
+          "totalPP": 12,
+          "remainingPP": 8
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 1,
+          "environment": 0,
+          "tax": 1,
+          "surveillance": 0,
+          "housing": 1,
+          "immigration": 2,
+          "speech": 2,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 66.31818181818181,
+          "ssi": 48.94999999999999,
+          "mpi": 73.5,
+          "totalCost": 11,
+          "totalPP": 11,
+          "remainingPP": 0
+        },
+        "modifiers": {
+          "ifi": -6,
+          "ssi": -2,
+          "mpi": -4,
+          "ppBonus": -1
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": -4.681818181818187,
+        "ssi": -10.350000000000016,
+        "mpi": 9.5,
+        "ppSpent": 7
+      },
+      "events": [
+        {
+          "id": "gov-reform",
+          "title": "政府改革法案",
+          "type": "政治事件",
+          "effectSummary": "IFI -6、MPI -4、SSI -2、PP -1"
+        }
+      ]
+    },
+    {
+      "id": "9f9a0dec-5612-41e2-b429-6e705abed4a6",
+      "createdAt": "2025-10-21T02:16:06.361Z",
+      "preferences": {
+        "housing": "regulate",
+        "speech": "regulate",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 1,
+          "environment": 0,
+          "tax": 2,
+          "surveillance": 2,
+          "housing": 1,
+          "immigration": 1,
+          "speech": 1,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 74.66666666666667,
+          "ssi": 50.9,
+          "mpi": 52,
+          "totalCost": 12,
+          "totalPP": 12,
+          "remainingPP": 0
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 1,
+          "environment": 0,
+          "tax": 2,
+          "surveillance": 2,
+          "housing": 1,
+          "immigration": 1,
+          "speech": 1,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 69.66666666666667,
+          "ssi": 42.9,
+          "mpi": 45,
+          "totalCost": 12,
+          "totalPP": 12,
+          "remainingPP": 0
+        },
+        "modifiers": {
+          "ifi": -5,
+          "ssi": -8,
+          "mpi": -7,
+          "ppBonus": 0
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": -5,
+        "ssi": -8,
+        "mpi": -7,
+        "ppSpent": 0
+      },
+      "events": [
+        {
+          "id": "culture-clash",
+          "title": "族群文化衝突",
+          "type": "社會事件",
+          "effectSummary": "IFI -5、SSI -8、MPI -7"
+        }
+      ]
+    },
+    {
+      "id": "3f257142-a3bb-4c80-9bc7-57ad42010ff5",
+      "createdAt": "2025-10-21T02:13:08.498Z",
+      "preferences": {
+        "surveillance": "security",
+        "speech": "regulate",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 1,
+          "surveillance": 0,
+          "housing": 1,
+          "immigration": 0,
+          "speech": 1,
+          "healthcare": 3
+        },
+        "metrics": {
+          "ifi": 60,
+          "ssi": 53.199999999999996,
+          "mpi": 88.6,
+          "totalCost": 12,
+          "totalPP": 12,
+          "remainingPP": 0
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 1,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 52.5,
+          "ssi": 73.85,
+          "mpi": 64,
+          "totalCost": 1,
+          "totalPP": 15,
+          "remainingPP": 14
+        },
+        "modifiers": {
+          "ifi": 7,
+          "ssi": 6,
+          "mpi": 9,
+          "ppBonus": 3
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": -7.5,
+        "ssi": 20.65,
+        "mpi": -24.599999999999994,
+        "ppSpent": -11
+      },
+      "events": [
+        {
+          "id": "citizen-assembly",
+          "title": "公民審議會突破",
+          "type": "正向事件",
+          "effectSummary": "IFI +7、SSI +6、MPI +9、PP +3"
+        }
+      ]
+    },
+    {
+      "id": "8713fc35-9455-4f2f-97bc-b402209b9fa4",
+      "createdAt": "2025-10-21T02:07:05.776Z",
+      "preferences": {
+        "housing": "regulate",
+        "speech": "regulate",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 1,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 61,
+          "ssi": 63.599999999999994,
+          "mpi": 56.2,
+          "totalCost": 2,
+          "totalPP": 12,
+          "remainingPP": 10
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 1,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 61,
+          "ssi": 54.599999999999994,
+          "mpi": 51.2,
+          "totalCost": 2,
+          "totalPP": 12,
+          "remainingPP": 10
+        },
+        "modifiers": {
+          "ifi": 0,
+          "ssi": -9,
+          "mpi": -5,
+          "ppBonus": 0
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 0,
+        "ssi": -9,
+        "mpi": -5,
+        "ppSpent": 0
+      },
+      "events": [
+        {
+          "id": "bureaucracy",
+          "title": "官僚延宕",
+          "type": "制度事件",
+          "effectSummary": "SSI -9、MPI -5"
+        }
+      ]
+    },
+    {
+      "id": "a7bd7a61-be11-40a4-8206-c62775579de8",
+      "createdAt": "2025-10-21T02:03:38.810Z",
+      "preferences": {
+        "housing": "liberalize",
+        "speech": "regulate",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 72,
+          "ssi": 70,
+          "mpi": 55,
+          "totalCost": 0,
+          "totalPP": 12,
+          "remainingPP": 12
+        },
+        "modifiers": null,
+        "locked": false
+      },
+      "postEvent": {
+        "votes": {
+          "education": 0,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 0,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 72,
+          "ssi": 70,
+          "mpi": 55,
+          "totalCost": 0,
+          "totalPP": 12,
+          "remainingPP": 12
+        },
+        "modifiers": {
+          "ifi": 0,
+          "ssi": 0,
+          "mpi": 0,
+          "ppBonus": 0
+        },
+        "locked": false
+      },
+      "diff": {
+        "ifi": 0,
+        "ssi": 0,
+        "mpi": 0,
+        "ppSpent": 0
+      },
+      "events": []
+    },
+    {
+      "id": "f3138922-c7a6-4bfc-8f7a-2f52d03501fa",
+      "createdAt": "2025-10-21T02:00:40.975Z",
+      "preferences": {
+        "housing": "regulate",
+        "speech": "regulate",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 2,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 1,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 54.099999999999994,
+          "ssi": 62.6,
+          "mpi": 61,
+          "totalCost": 5,
+          "totalPP": 12,
+          "remainingPP": 7
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 2,
+          "environment": 0,
+          "tax": 0,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 0,
+          "speech": 1,
+          "healthcare": 0
+        },
+        "metrics": {
+          "ifi": 56.099999999999994,
+          "ssi": 55.6,
+          "mpi": 67,
+          "totalCost": 5,
+          "totalPP": 12,
+          "remainingPP": 7
+        },
+        "modifiers": {
+          "ifi": 2,
+          "ssi": -7,
+          "mpi": 6,
+          "ppBonus": 0
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 2,
+        "ssi": -7,
+        "mpi": 6,
+        "ppSpent": 0
+      },
+      "events": [
+        {
+          "id": "labor-strike",
+          "title": "全國罷工浪潮",
+          "type": "勞動事件",
+          "effectSummary": "SSI -7、MPI +6、IFI +2"
+        }
+      ]
+    }
+  ]
+}
