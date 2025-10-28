@@ -110,7 +110,7 @@ const sanitizeVotes = (input) => {
   return votes;
 };
 
-const metricKeys = ['ifi', 'ssi', 'mpi', 'totalCost', 'totalPP', 'remainingPP'];
+const metricKeys = ['ifi', 'ssi', 'mpi', 'totalCost', 'totalPP', 'remainingPP', 'concentration', 'trustIndex'];
 const sanitizeMetrics = (input) => {
   if (!input || typeof input !== 'object') return null;
   const metrics = {};

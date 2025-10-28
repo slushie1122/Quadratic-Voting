@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-10-22T14:00:21.707Z",
+  "lastUpdated": "2025-10-27T13:29:34.196Z",
   "issues": [],
   "proposals": [],
   "votes": [],
@@ -74,12 +74,17 @@
       "title": "課綱透明協作平台",
       "description": "建立線上協作平台，公開課綱草案並納入地方教師、學生與家長的審議意見。",
       "support": 0,
-      "concern": 2,
+      "concern": 3,
       "createdAt": "2025-10-21T01:44:36.759Z"
     }
   ],
   "feedbackInstitutional": [],
   "feedbackExhibition": [
+    {
+      "id": "a33f9a5f-69ad-46b1-b28a-0f2bde67ebc6",
+      "message": "asdf",
+      "createdAt": "2025-10-27T13:27:14.564Z"
+    },
     {
       "id": "4aa39eca-dc11-4dcd-b46a-b6bd6472de87",
       "message": "讚欸",
@@ -87,6 +92,160 @@
     }
   ],
   "sessionLogs": [
+    {
+      "id": "c34c9419-2161-4a7f-9abb-a0b3b8240a54",
+      "createdAt": "2025-10-27T13:29:34.194Z",
+      "preferences": {
+        "surveillance": "security",
+        "housing": "regulate",
+        "immigration": "open",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 1,
+          "environment": 1,
+          "tax": 1,
+          "surveillance": 1,
+          "housing": 1,
+          "immigration": 1,
+          "speech": 1,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 80.5,
+          "ssi": 49.65,
+          "mpi": 86.2,
+          "totalCost": 8,
+          "totalPP": 12,
+          "remainingPP": 4,
+          "concentration": 0.125,
+          "trustIndex": 70.94
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 1,
+          "environment": 1,
+          "tax": 1,
+          "surveillance": 1,
+          "housing": 1,
+          "immigration": 1,
+          "speech": 1,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 83.5,
+          "ssi": 45.65,
+          "mpi": 84.2,
+          "totalCost": 8,
+          "totalPP": 12,
+          "remainingPP": 4,
+          "concentration": 0.125,
+          "trustIndex": 69.53999999999999
+        },
+        "modifiers": {
+          "ifi": 3,
+          "ssi": -4,
+          "mpi": -2,
+          "ppBonus": 0
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 3,
+        "ssi": -4,
+        "mpi": -2,
+        "ppSpent": 0
+      },
+      "events": [
+        {
+          "id": "housing-conflict",
+          "title": "公共住房衝突",
+          "type": "社區事件",
+          "effectSummary": "IFI +3、SSI -4、MPI -2"
+        }
+      ]
+    },
+    {
+      "id": "5e2349fd-26aa-4249-b64e-6e0187c964aa",
+      "createdAt": "2025-10-27T13:18:11.283Z",
+      "preferences": {
+        "environment": "green",
+        "housing": "regulate",
+        "immigration": "open",
+        "healthcare": "passport"
+      },
+      "baseline": {
+        "votes": {
+          "education": 2,
+          "environment": 0,
+          "tax": 1,
+          "surveillance": 0,
+          "housing": 0,
+          "immigration": 1,
+          "speech": 0,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 63.5,
+          "ssi": 57.25,
+          "mpi": 90.7,
+          "totalCost": 7,
+          "totalPP": 12,
+          "remainingPP": 5,
+          "concentration": 0.5714285714285714,
+          "trustIndex": 55.30285714285714
+        },
+        "modifiers": null,
+        "locked": true
+      },
+      "postEvent": {
+        "votes": {
+          "education": 2,
+          "environment": 0,
+          "tax": 1,
+          "surveillance": 0,
+          "housing": 2,
+          "immigration": 1,
+          "speech": 0,
+          "healthcare": 1
+        },
+        "metrics": {
+          "ifi": 67.31818181818181,
+          "ssi": 47.04999999999999,
+          "mpi": 100,
+          "totalCost": 11,
+          "totalPP": 12,
+          "remainingPP": 1,
+          "concentration": 0.36363636363636365,
+          "trustIndex": 70.31454545454545
+        },
+        "modifiers": {
+          "ifi": -5,
+          "ssi": -6,
+          "mpi": 0,
+          "ppBonus": 0
+        },
+        "locked": true
+      },
+      "diff": {
+        "ifi": 3.818181818181813,
+        "ssi": -10.20000000000001,
+        "mpi": 9.299999999999997,
+        "ppSpent": 4
+      },
+      "events": [
+        {
+          "id": "media-bias",
+          "title": "媒體偏向報導",
+          "type": "媒體事件",
+          "effectSummary": "指定議題被放大，IFI -5、SSI -6"
+        }
+      ]
+    },
     {
       "id": "0e015ed9-6a1e-4cc3-9dd7-7f4d531b9e62",
       "createdAt": "2025-10-22T14:00:21.707Z",

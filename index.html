@@ -47,6 +47,13 @@
           以展場入口的「制度垃圾場」為靈感，挑選你對爭議議題的直覺反應。這裡僅作為引言與討論素材，
           <strong>不會改變後續的分數或指數計算</strong>，但會在策展回饋中記錄每位參與者的直覺傾向。
         </p>
+        <div class="stage__challenge">
+          <h3>理念挑戰</h3>
+          <p>如果每個人都按照理性行動，制度就一定會公平嗎？</p>
+          <p class="stage__case">
+            透過近年公共議題的真實案例（如地方選舉的資訊操弄、利益聯盟暗中交換資源），我們邀請你帶著懷疑與好奇進入體驗，觀察制度如何在人的選擇下顯得脆弱。
+          </p>
+        </div>
         <p class="stage__hint">至少挑選三個議題即可開始下一階段。</p>
       </header>
 
@@ -159,7 +166,10 @@
         <h2>平方投票模擬器</h2>
         <p>
           你擁有 <strong>12
-            點政治點數（PP）</strong>。在展場，這些點數化成象徵性的籌碼；在網頁，你可以對課綱一致化、海岸風電、富人加稅、城市監控、租金上限、移工配額、數位言論責任以及健康資料共享等議題投下正票或負票。成本遵循平方函數，每次調整都會顯示該議題累計花費的點數。
+            點政治點數（PP）</strong>。在展場，這些點數化成象徵性的籌碼；在網頁，你可以對課綱一致化、海岸風電、富人加稅、城市監控、租金上限、移工配額、數位言論責任以及健康資料共享等議題投下正票或負票。每一次投入的成本依照平方函數 <code>Cost = v²</code> 成長，越偏向某個議題，代價越高。
+        </p>
+        <p>
+          平方投票的原始設計目標是「限制權力濫用、鼓勵理性分配」，然而若有人更懂規則，或握有額外資源，他們是否能在制度縫隙中取得優勢？請在這一輪觀察自己如何分配籌碼。
         </p>
       </header>
 
@@ -172,6 +182,7 @@
               <small>/ <span id="pp-total-baseline">12</span></small>
             </div>
             <p class="status-card__note">每增加或減少一票的成本為 <code>票數²</code>，花費將自動從你的 PP 中扣除。</p>
+            <div class="status-card__warning" id="baseline-warning" aria-live="polite"></div>
             <p class="status-card__alert" id="baseline-feedback"></p>
           </div>
 
@@ -224,6 +235,14 @@
         <p>
           每位參與者將收到一張隨機事件卡，事件會改變制度條件。請閱讀事件內容後重新配置你的政治點數，看看制度指數如何被拉動。
         </p>
+        <ol class="stage__steps">
+          <li>第一輪：所有人資源平等，建構基準線。</li>
+          <li>第二輪：事件揭示特權或結盟機會，制度開始被扭曲。</li>
+          <li>第三輪：嘗試借票、交易或放棄議題，觀察制度是否崩壞。</li>
+        </ol>
+        <p>
+          當 AI 指標出現紅色警示，代表制度正在失靈，請留意自己的策略是否推動了這場崩解。
+        </p>
       </header>
 
       <div class="event-deck">
@@ -246,6 +265,7 @@
               <p class="status-card__note">
                 事件已改變制度條件，部份議題的成本或影響可能不同。請重新配置並鎖定結果。
               </p>
+              <div class="status-card__warning" id="post-warning" aria-live="polite"></div>
               <p class="status-card__alert" id="post-feedback"></p>
             </div>
 
@@ -332,14 +352,14 @@
       </footer>
     </section>
 
-    <section class="stage stage--reflection" data-stage="5" hidden>
-      <header class="stage__header">
-        <span class="stage__label">Stage 5｜反思與行動</span>
-        <h2>最終走向哪裡？</h2>
-        <p>
-          根據投票、事件與共創結果，社會可能朝向共榮、僵化或墜入失敗循環。請帶著展場體驗的情緒，在此留下你的行動承諾。
-        </p>
-      </header>
+      <section class="stage stage--reflection" data-stage="5" hidden>
+        <header class="stage__header">
+          <span class="stage__label">Stage 5｜反思與行動</span>
+          <h2>最終走向哪裡？</h2>
+          <p>
+            根據投票、事件與共創結果，社會可能朝向共榮、僵化或墜入失敗循環。請帶著展場體驗的情緒，在此留下你的行動承諾。
+          </p>
+        </header>
 
       <article class="outcome-card" id="outcome-card">
         <header>
@@ -379,6 +399,14 @@
           </section>
         </div>
       </article>
+
+      <section class="reflection-prompts" aria-label="集體反思引導">
+        <h3>集體反思與覺察</h3>
+        <ul>
+          <li>制度失敗的原因是規則設計不夠好，還是人們不願遵守？</li>
+          <li>如果給你第二次機會，你會如何改寫投票流程或制度規則？</li>
+        </ul>
+      </section>
 
       <section class="dual-feedback">
         <div class="feedback-column">

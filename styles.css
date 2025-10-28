@@ -276,6 +276,60 @@ a {
   line-height: 1.6;
 }
 
+.stage__challenge {
+  background: rgba(246, 178, 31, 0.08);
+  border: 1px solid rgba(246, 178, 31, 0.18);
+  border-radius: 18px;
+  padding: 1.25rem 1.5rem;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.stage__challenge h3 {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(246, 178, 31, 0.85);
+}
+
+.stage__challenge p {
+  margin: 0;
+  color: var(--fg-main);
+  line-height: 1.55;
+}
+
+.stage__case {
+  color: rgba(226, 232, 240, 0.75);
+  font-size: 0.95rem;
+}
+
+.stage__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-radius: 18px;
+  background: rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  color: rgba(191, 219, 254, 0.9);
+}
+
+.stage__steps li {
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.stage__steps li::before {
+  content: "◎";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(191, 219, 254, 0.85);
+}
+
 .stage__hint {
   margin: 0;
   font-size: 0.9rem;
@@ -428,6 +482,25 @@ a {
 .status-card__note {
   font-size: 0.9rem;
   color: var(--fg-muted);
+}
+
+.status-card__warning {
+  font-size: 0.9rem;
+  color: rgba(248, 113, 113, 0.85);
+  font-weight: 600;
+  min-height: 1.5rem;
+}
+
+.status-card__warning.is-warning {
+  color: rgba(250, 204, 21, 0.9);
+}
+
+.status-card__warning.is-safe {
+  color: rgba(134, 239, 172, 0.85);
+}
+
+.status-card__warning.is-critical {
+  color: rgba(248, 113, 113, 0.95);
 }
 
 .status-meters {
@@ -1482,6 +1555,30 @@ a {
 .feedback-actions {
   display: flex;
   justify-content: flex-end;
+}
+
+.reflection-prompts {
+  background: rgba(15, 24, 41, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 1.5rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.reflection-prompts h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: rgba(248, 196, 113, 0.95);
+}
+
+.reflection-prompts ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.5rem;
+  color: var(--fg-muted);
+  font-size: 0.95rem;
 }
 
 .closing-quote {

@@ -649,9 +649,19 @@ const calculateRoundMetrics = (round) => {
   const civicVoice =
     Math.max(immigration, 0) + Math.max(education, 0) + Math.max(-speech, 0) + Math.max(healthcare, 0) * 0.8;
   const baseMPI = 55 + supportive * 3 + guardian * 2 - barrier * 3 + civicVoice * 1.5;
+  const trustBase =
+    68 -
+    concentration * 40 -
+    shareNegative * 28 -
+    contestedPenalty * 0.4 +
+    supportive * 1.1 +
+    guardian * 0.6 -
+    barrier * 1.2 +
+    modifiers.ssi * 0.35;
   const ifi = clamp(baseIFI + modifiers.ifi, 0, 100);
   const ssi = clamp(baseSSI + modifiers.ssi, 0, 100);
   const mpi = clamp(baseMPI + modifiers.mpi, 0, 100);
+  const trustIndex = clamp(trustBase, 0, 100);
   const totalPP = getTotalPoints(round);
   const remainingPP = totalPP - totalCost;
   return {
@@ -660,8 +670,55 @@ const calculateRoundMetrics = (round) => {
     mpi,
     totalCost,
     totalPP,
-    remainingPP
+    remainingPP,
+    concentration,
+    trustIndex
   };
+};
+const updateRoundWarnings = (round, metrics) => {
+  const warningId = round === 'baseline' ? 'baseline-warning' : 'post-warning';
+  const warningEl = document.getElementById(warningId);
+  if (!warningEl) return;
+  warningEl.textContent = '';
+  warningEl.classList.remove('is-critical', 'is-warning', 'is-safe');
+  if (!metrics || metrics.totalCost <= 0) {
+    warningEl.textContent = '尚未投入 PP，AI 指標等待資料。';
+    warningEl.classList.add('is-safe');
+    return;
+  }
+  const concentrationPercent = Math.round((metrics.concentration ?? 0) * 100);
+  const trustScore = Math.round(metrics.trustIndex ?? metrics.ssi ?? 0);
+  const alerts = [];
+  let severity = 'safe';
+  if (metrics.concentration >= 0.6) {
+    alerts.push('權力集中度過高');
+    severity = 'critical';
+  } else if (metrics.concentration >= 0.45) {
+    alerts.push('權力集中度升高');
+    severity = severity === 'critical' ? severity : 'warning';
+  }
+  if (metrics.ifi < 45) {
+    alerts.push('制度公平指數急遽下滑');
+    severity = 'critical';
+  } else if (metrics.ifi < 55) {
+    alerts.push('制度公平指數緊張');
+    severity = severity === 'critical' ? severity : 'warning';
+  }
+  if ((metrics.ssi ?? 0) < 45 || (metrics.trustIndex ?? 0) < 45) {
+    alerts.push('信任指數崩落');
+    severity = 'critical';
+  } else if ((metrics.ssi ?? 0) < 55 || (metrics.trustIndex ?? 0) < 55) {
+    alerts.push('信任指數下滑');
+    severity = severity === 'critical' ? severity : 'warning';
+  }
+  const baseMessage = `信任指數 ${trustScore} ｜ 權力集中度 ${concentrationPercent}%`;
+  if (!alerts.length) {
+    warningEl.textContent = `${baseMessage} ｜ 制度指數穩定中。`;
+    warningEl.classList.add('is-safe');
+    return;
+  }
+  warningEl.textContent = `${baseMessage} ｜ ${alerts.join('｜')}`;
+  warningEl.classList.add(severity === 'critical' ? 'is-critical' : 'is-warning');
 };
 const updateRoundStatus = (round) => {
   const metrics = calculateRoundMetrics(round);
@@ -691,6 +748,7 @@ const updateRoundStatus = (round) => {
       barEl.style.width = `${Math.round(value)}%`;
     }
   });
+  updateRoundWarnings(round, metrics);
   syncRoundControls();
 };
 const displayRoundMessage = (round, message, timeout = 3200) => {
