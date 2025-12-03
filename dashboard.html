@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>即時統計｜平方投票思想實驗</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body data-theme="light">
+  <div class="grain" aria-hidden="true"></div>
+  <main class="experience dashboard">
+    <header class="stage__header">
+      <span class="stage__label">統計面板</span>
+      <h2>即時統計（連線 Supabase）</h2>
+      <p>從雲端資料表讀取最新提交紀錄，有新分配送出時可手動刷新，或搭配 Realtime（如需啟用）。</p>
+      <a class="ghost" href="./index.html">返回思想實驗</a>
+    </header>
+
+    <section class="dashboard__panel">
+      <header class="dashboard__meta">
+        <div>
+          <p class="dashboard__label">已提交份數</p>
+          <p class="dashboard__value" id="submission-count">0</p>
+        </div>
+        <div>
+          <p class="dashboard__label">總票數（正負絕對值合計）</p>
+          <p class="dashboard__value" id="total-votes">0</p>
+        </div>
+        <div>
+          <p class="dashboard__label">最新提交時間</p>
+          <p class="dashboard__value" id="latest-time">—</p>
+        </div>
+        <div class="dashboard__actions">
+          <button class="ghost" type="button" id="refresh-chart">手動刷新</button>
+          <button class="ghost danger" type="button" id="reset-records">清除所有紀錄</button>
+          <button class="ghost" type="button" id="export-csv">匯出 CSV</button>
+        </div>
+      </header>
+
+      <p class="dashboard__note">圖表以 0 為中心：左側為負票（反對），右側為正票（支持）。長度比例取決於各議題的絕對總票數。</p>
+
+      <div class="chart" id="chart" role="list" aria-label="議題投票統計"></div>
+    </section>
+  </main>
+
+  <script type="module">
+    import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+    const SUPABASE_URL = 'https://ajhskxfarxgebfbthtke.supabase.co';
+    const SUPABASE_ANON_KEY =
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFqaHNreGZhcnhnZWJmYnRodGtlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ3NzA2MjQsImV4cCI6MjA4MDM0NjYyNH0.GeblW3Cnm3USBNYz3MVVTOKVGbx43evMHPIn83TbEb0';
+    const TABLE_NAME = 'votes';
+    const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+    const topics = [
+      { key: 'education', title: '課綱一致化改革' },
+      { key: 'environment', title: '海岸風電擴張案' },
+      { key: 'tax', title: '高收入者追加稅' },
+      { key: 'surveillance', title: '城市 AI 監控網' },
+      { key: 'housing', title: '住宅限購與租金上限' },
+      { key: 'immigration', title: '移工長期居留配額' },
+      { key: 'speech', title: '數位言論平台責任' },
+      { key: 'healthcare', title: '健康資料共享政策' }
+    ];
+
+    const loadSubmissions = async () => {
+      const { data, error } = await supabase
+        .from(TABLE_NAME)
+        .select('votes,created_at')
+        .order('created_at', { ascending: true });
+      if (error) {
+        console.warn('Failed to load submissions', error);
+        return [];
+      }
+      return data ?? [];
+    };
+
+    const clearSubmissions = async () => {
+      const { error } = await supabase.from(TABLE_NAME).delete().gt('created_at', '1970-01-01');
+      if (error) {
+        window.alert('清除失敗，請稍後再試或檢查權限。');
+        return;
+      }
+      renderChart();
+    };
+
+    const exportCsv = async () => {
+      const submissions = await loadSubmissions();
+      if (!submissions.length) {
+        window.alert('目前沒有可匯出的紀錄。');
+        return;
+      }
+      const headers = ['createdAt', ...topics.map((t) => t.key)];
+      const rows = submissions.map((entry) => {
+        const row = [entry.created_at || ''];
+        topics.forEach((t) => row.push(entry.votes?.[t.key] ?? 0));
+        return row;
+      });
+
+      const totalsPositive = topics.reduce((acc, t) => ({ ...acc, [t.key]: 0 }), {});
+      const totalsNegative = topics.reduce((acc, t) => ({ ...acc, [t.key]: 0 }), {});
+      submissions.forEach((entry) => {
+        topics.forEach((t) => {
+          const val = Number(entry.votes?.[t.key] ?? 0);
+          if (val > 0) totalsPositive[t.key] += val;
+          if (val < 0) totalsNegative[t.key] += Math.abs(val);
+        });
+      });
+      const totalsAbsolute = topics.reduce(
+        (acc, t) => ({ ...acc, [t.key]: totalsPositive[t.key] + totalsNegative[t.key] }),
+        {}
+      );
+
+      rows.push(['total_positive', ...topics.map((t) => totalsPositive[t.key])]);
+      rows.push(['total_negative', ...topics.map((t) => totalsNegative[t.key])]);
+      rows.push(['total_absolute', ...topics.map((t) => totalsAbsolute[t.key])]);
+
+      const csv = [headers, ...rows]
+        .map((row) =>
+          row
+            .map((cell) => {
+              const str = String(cell ?? '');
+              return /[",\n]/.test(str) ? `"${str.replace(/"/g, '""')}"` : str;
+            })
+            .join(',')
+        )
+        .join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'qv-submissions.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    };
+
+    const formatTime = (iso) => {
+      if (!iso) return '—';
+      const d = new Date(iso);
+      if (Number.isNaN(d.getTime())) return '—';
+      return d.toLocaleString('zh-TW', { hour12: false });
+    };
+
+    const renderChart = async () => {
+      const submissions = await loadSubmissions();
+      const chart = document.getElementById('chart');
+      const countEl = document.getElementById('submission-count');
+      const latestEl = document.getElementById('latest-time');
+      if (countEl) countEl.textContent = submissions.length;
+      if (latestEl) {
+        const latest = submissions.length ? submissions[submissions.length - 1].created_at : null;
+        latestEl.textContent = formatTime(latest);
+      }
+      const totalVotesEl = document.getElementById('total-votes');
+      if (totalVotesEl) totalVotesEl.textContent = 0;
+      if (!chart) return;
+      if (!submissions.length) {
+        chart.innerHTML = '<p class="dashboard__empty">尚無提交紀錄。</p>';
+        return;
+      }
+      const positives = new Map();
+      const negatives = new Map();
+      topics.forEach((t) => {
+        positives.set(t.key, 0);
+        negatives.set(t.key, 0);
+      });
+      let totalVotes = 0;
+      submissions.forEach((entry) => {
+        const votes = entry.votes || {};
+        topics.forEach((t) => {
+          const val = Number(votes[t.key] ?? 0);
+          if (val > 0) {
+            positives.set(t.key, (positives.get(t.key) ?? 0) + val);
+            totalVotes += val;
+          } else if (val < 0) {
+            negatives.set(t.key, (negatives.get(t.key) ?? 0) + Math.abs(val));
+            totalVotes += Math.abs(val);
+          }
+        });
+      });
+      const max = Math.max(
+        1,
+        ...Array.from(positives.values()),
+        ...Array.from(negatives.values())
+      );
+      if (totalVotesEl) totalVotesEl.textContent = totalVotes;
+      const totalsAbs = topics.map((t) => {
+        const pos = positives.get(t.key) ?? 0;
+        const neg = negatives.get(t.key) ?? 0;
+        return { title: t.title, key: t.key, total: pos + neg, pos, neg };
+      });
+      const top3List = totalsAbs
+        .slice()
+        .sort((a, b) => b.total - a.total)
+        .slice(0, 3);
+      const top3Map = new Map(top3List.map((item, idx) => [item.key, idx + 1]));
+      chart.innerHTML = topics
+        .map((topic) => {
+          const pos = positives.get(topic.key) ?? 0;
+          const neg = negatives.get(topic.key) ?? 0;
+          const posRatio = pos > 0 ? pos / max : 0;
+          const negRatio = neg > 0 ? neg / max : 0;
+          const rank = top3Map.get(topic.key);
+          const badge = rank ? `<span class="chart__badge rank-${rank}">Top ${rank}</span>` : '';
+          const total = pos + neg;
+          const isHot =
+            total >= 10 && pos > 0 && neg > 0 && Math.abs(pos - neg) / total <= 0.2;
+          const milestone =
+            total >= 100 ? `${Math.floor(total / 100) * 100}+` : null;
+          const totalLabel = total >= 0 ? `+${total}` : `${total}`;
+          return `
+            <div class="chart__row" role="listitem">
+              <div class="chart__label">
+                <span>
+                  ${topic.title}
+                  ${badge}
+                  ${milestone ? `<span class="chart__badge chart__milestone">≥${milestone}</span>` : ''}
+                  ${isHot ? '<span class="chart__badge chart__hot">Hot</span>' : ''}
+                </span>
+                <span class="chart__numbers">
+                  <span class="chart__neg">-${neg}</span>
+                  <span class="chart__sep">／</span>
+                  <span class="chart__pos">+${pos}</span>
+                  <span class="chart__sep">／</span>
+                  <span class="chart__total">${totalLabel} 票</span>
+                </span>
+              </div>
+              <div class="chart__bars">
+                <div class="chart__bar chart__bar--negative">
+                  <div class="chart__bar-fill chart__bar-fill--negative" style="transform: scaleX(${negRatio});"></div>
+                </div>
+                <div class="chart__bar chart__bar--positive">
+                  <div class="chart__bar-fill chart__bar-fill--positive" style="transform: scaleX(${posRatio});"></div>
+                </div>
+              </div>
+            </div>`;
+        })
+        .join('');
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      renderChart();
+      const refreshBtn = document.getElementById('refresh-chart');
+      if (refreshBtn) refreshBtn.addEventListener('click', renderChart);
+      const resetBtn = document.getElementById('reset-records');
+      if (resetBtn) {
+        resetBtn.addEventListener('click', () => {
+          const ok = window.confirm('確定要刪除所有投票紀錄嗎？此操作無法復原。');
+          if (ok) clearSubmissions();
+        });
+      }
+      const exportBtn = document.getElementById('export-csv');
+      if (exportBtn) exportBtn.addEventListener('click', exportCsv);
+    });
+  </script>
+</body>
+
+</html>
