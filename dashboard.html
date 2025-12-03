@@ -255,6 +255,30 @@
       }
       const exportBtn = document.getElementById('export-csv');
       if (exportBtn) exportBtn.addEventListener('click', exportCsv);
+
+      // Realtime：監聽 votes 表有新紀錄就刷新圖表
+      let renderTimer = null;
+      const scheduleRender = () => {
+        if (renderTimer) clearTimeout(renderTimer);
+        renderTimer = setTimeout(renderChart, 150);
+      };
+
+      const channel = supabase
+        .channel('votes-realtime')
+        .on(
+          'postgres_changes',
+          { event: '*', schema: 'public', table: TABLE_NAME },
+          () => scheduleRender()
+        )
+        .subscribe((status) => {
+          if (status === 'CHANNEL_ERROR') {
+            console.warn('Realtime channel error, falling back to manual refresh');
+          }
+        });
+
+      window.addEventListener('beforeunload', () => {
+        if (channel) supabase.removeChannel(channel);
+      });
     });
   </script>
 </body>
