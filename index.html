@@ -20,12 +20,12 @@
       <div class="hero__actions">
         <button class="cta" type="button" data-action="start-experiment">開始思想實驗</button>
         <a class="ghost" href="https://hackmd.io/@slushie1122/SJXPxOfCgg" target="_blank" rel="noreferrer">閱讀策展研究</a>
-        <a class="ghost" href="./dashboard.html" target="_blank" rel="noreferrer">查看即時統計</a>
+        <button class="ghost" type="button" id="open-dashboard">查看即時統計</button>
       </div>
     </div>
     <figure class="hero__visual" aria-hidden="true">
       <div class="hero__city"></div>
-      <figcaption>制度裂縫｜Visual mock</figcaption>
+      <figcaption>平方投票思想實驗｜100 VC</figcaption>
     </figure>
   </header>
 
@@ -35,7 +35,8 @@
         <span class="stage__label">思想實驗</span>
         <h2>你的 100 VC 要放哪裡？</h2>
         <p>
-          想像你拿到一年 100 點的 Voice Credits。回到議題版圖——氣候、教育、交通、醫療……你會怎麼分配？每多投一張票，成本就以平方成長（Cost = v²）。你願意為最在乎的議題付出多少點數？為了投得比別人更多，願承擔多高成本？
+          想像你拿到一年 100 點的 Voice Credits。回到議題版圖——氣候、教育、交通、醫療……你會怎麼分配？每多投一張票，成本就以平方成長（Cost =
+          v²）。你願意為最在乎的議題付出多少點數？為了投得比別人更多，願承擔多高成本？
         </p>
       </header>
 
@@ -57,28 +58,26 @@
               <span id="vc-remaining">100</span>
               <small>/ <span id="vc-total">100</span></small>
             </div>
-            <p class="status-card__note">成本公式 <code>Cost = v²</code>。第一票 1 VC，10 票 100 VC。</p>
+            <p class="status-card__note status-card__note--inline">成本公式 <code>Cost = v²</code>，已投入：<span id="vc-cost">0</span> VC。</p>
             <p class="status-card__tip">你可以對議題投正票或負票：正票代表支持、負票代表反對，每一票都依平方成本扣點。</p>
+            <div class="vote-actions">
+              <button class="ghost" type="button" id="reset-votes">全部重置</button>
+              <button class="cta" type="button" id="submit-votes">送出分配</button>
+            </div>
             <div class="status-card__warning" id="vc-warning" aria-live="polite"></div>
             <p class="status-card__alert" id="vc-feedback"></p>
-            <p class="status-card__note">已投入：<span id="vc-cost">0</span> VC</p>
-            <button class="ghost" type="button" id="reset-votes">全部重置</button>
-            <button class="cta" type="button" id="submit-votes">送出這份分配</button>
           </div>
-
           <section class="summary" aria-label="投入摘要">
-            <h3>你目前的出手</h3>
+            <h3>你目前的分配</h3>
             <ul id="summary-list">
               <li>尚未投入，先從最在乎的議題開始。</li>
             </ul>
           </section>
         </aside>
-
         <div class="vote-board__columns" id="vote-columns"></div>
       </div>
     </section>
   </main>
-
   <script type="module" src="./main.js"></script>
 </body>
 

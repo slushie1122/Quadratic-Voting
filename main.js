@@ -151,12 +151,12 @@ const renderSummary = () => {
       abs: Math.abs(state.votes[topic.key] ?? 0)
     }))
     .sort((a, b) => {
-      if (b.value !== a.value) return b.value - a.value; // 票數多的在前，正票優先於負票
-      if (b.abs !== a.abs) return b.abs - a.abs;
+      if (b.abs !== a.abs) return b.abs - a.abs; // 絕對值大的在前
+      if (b.value !== a.value) return b.value - a.value; // 同絕對值時正票優先
       return a.title.localeCompare(b.title);
     })
     .filter((item) => item.abs > 0)
-    .slice(0, 4);
+    .slice(0, 3);
 
   if (!sorted.length) {
     summaryEl.innerHTML = '<li>尚未投入，先從最在乎的議題開始。</li>';
@@ -309,3 +309,19 @@ if (document.readyState === 'loading') {
 } else {
   setup();
 }
+
+const openDashboardWithPassword = () => {
+  const pass = window.prompt('請輸入查看即時統計的密碼');
+  if (pass === 'admin') {
+    window.open('./dashboard.html', '_blank');
+  } else if (pass !== null) {
+    window.alert('密碼錯誤');
+  }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+  const dashboardBtn = document.getElementById('open-dashboard');
+  if (dashboardBtn) {
+    dashboardBtn.addEventListener('click', openDashboardWithPassword);
+  }
+});
