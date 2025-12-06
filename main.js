@@ -1,7 +1,6 @@
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 const $ = (selector, parent = document) => parent.querySelector(selector);
-const $$ = (selector, parent = document) => Array.from(parent.querySelectorAll(selector));
 
 const VOICE_CREDITS = 100;
 const SUPABASE_URL = 'https://ajhskxfarxgebfbthtke.supabase.co';
@@ -80,8 +79,21 @@ const totalCost = (votes) =>
 const remainingCredits = () => Math.max(0, VOICE_CREDITS - totalCost(state.votes));
 
 const formatCost = (value, inline = false) =>
-  inline ? `花費：${value * value} VC` : `成本 ${value * value} VC`;
+  inline ? `成本：${value * value} VC` : `成本 ${value * value} VC`;
 const formatVoteValue = (value) => (value > 0 ? `+${value}` : `${value}`);
+
+const setFeedback = (message, duration = 2200) => {
+  const feedback = document.getElementById('vc-feedback');
+  if (!feedback) return;
+  feedback.textContent = message;
+  if (duration > 0) {
+    setTimeout(() => {
+      if (feedback.textContent === message) {
+        feedback.textContent = '';
+      }
+    }, duration);
+  }
+};
 
 const renderBoard = () => {
   const container = $('#vote-columns');
@@ -166,9 +178,8 @@ const renderSummary = () => {
   summaryEl.innerHTML = sorted
     .map(
       (item) => {
-        const votesText = `${item.value > 0 ? '+' : ''}${item.value} 票（${
-          item.value * item.value
-        } VC）`;
+        const votesText = `${item.value > 0 ? '+' : ''}${item.value} 票（${item.value * item.value
+          } VC）`;
         return `<li><strong>${item.title}</strong>：<span class="summary-count">${votesText}</span></li>`;
       }
     )
@@ -181,15 +192,7 @@ const adjustVote = (topicKey, direction) => {
   const projectedVotes = { ...state.votes, [topicKey]: proposed };
   const cost = totalCost(projectedVotes);
   if (cost > VOICE_CREDITS) {
-    const message = $('#vc-feedback');
-    if (message) {
-      message.textContent = '發言權不足，請收回其他議題或降低票數。';
-      setTimeout(() => {
-        if (message.textContent === '發言權不足，請收回其他議題或降低票數。') {
-          message.textContent = '';
-        }
-      }, 2200);
-    }
+    setFeedback('發言權不足，請收回其他議題或降低票數。');
     return;
   }
   state.votes[topicKey] = proposed;
@@ -203,38 +206,16 @@ const resetVotes = () => {
 
 const submitCurrentVotes = async () => {
   const spent = VOICE_CREDITS - remainingCredits();
-  const feedback = document.getElementById('vc-feedback');
   if (spent <= 0) {
-    if (feedback) {
-      feedback.textContent = '至少投入 1 VC 才能送出。';
-      setTimeout(() => {
-        if (feedback.textContent === '至少投入 1 VC 才能送出。') {
-          feedback.textContent = '';
-        }
-      }, 2000);
-    }
+    setFeedback('至少投入 1 VC 才能送出。', 2000);
     return;
   }
   const { error } = await supabase.from(TABLE_NAME).insert({ votes: { ...state.votes } });
   if (error) {
-    if (feedback) {
-      feedback.textContent = '送出失敗，請稍後再試。';
-      setTimeout(() => {
-        if (feedback.textContent === '送出失敗，請稍後再試。') {
-          feedback.textContent = '';
-        }
-      }, 2400);
-    }
+    setFeedback('送出失敗，請稍後再試。', 2400);
     return;
   }
-  if (feedback) {
-    feedback.textContent = '已送出並記錄至雲端，統計頁可查看。';
-    setTimeout(() => {
-      if (feedback.textContent === '已送出並記錄至雲端，統計頁可查看。') {
-        feedback.textContent = '';
-      }
-    }, 2400);
-  }
+  setFeedback('已送出並記錄至雲端，統計頁可查看。', 2400);
   resetVotes();
 };
 
@@ -302,6 +283,10 @@ const setup = () => {
       }
     });
   }
+  const dashboardBtn = document.getElementById('open-dashboard');
+  if (dashboardBtn) {
+    dashboardBtn.addEventListener('click', openDashboardWithPassword);
+  }
 };
 
 if (document.readyState === 'loading') {
@@ -318,10 +303,3 @@ const openDashboardWithPassword = () => {
     window.alert('密碼錯誤');
   }
 };
-
-document.addEventListener('DOMContentLoaded', () => {
-  const dashboardBtn = document.getElementById('open-dashboard');
-  if (dashboardBtn) {
-    dashboardBtn.addEventListener('click', openDashboardWithPassword);
-  }
-});
