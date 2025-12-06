@@ -78,8 +78,7 @@ const totalCost = (votes) =>
 
 const remainingCredits = () => Math.max(0, VOICE_CREDITS - totalCost(state.votes));
 
-const formatCost = (value, inline = false) =>
-  inline ? `成本：${value * value} VC` : `成本 ${value * value} VC`;
+const formatCost = (value, inline = false) => `成本${inline ? '：' : ' '}${value * value} VC`;
 const formatVoteValue = (value) => (value > 0 ? `+${value}` : `${value}`);
 
 const setFeedback = (message, duration = 2200) => {
