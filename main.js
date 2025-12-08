@@ -13,49 +13,49 @@ const topics = [
   {
     key: 'education',
     title: '課綱一致化改革',
-    subtitle: '統一教材 vs 多元聲音',
+    subtitle: '統一教材 vs. 多元聲音',
     description: '統一課綱被視為提升競爭力的手段，但也可能壓抑多元文化與在地語言。'
   },
   {
     key: 'environment',
     title: '海岸風電擴張案',
-    subtitle: '低碳與漁權衝突',
+    subtitle: '低碳能源 vs. 守護漁權',
     description: '離岸風電帶來綠能，同時擠壓漁業生計與海洋生態。'
   },
   {
     key: 'tax',
     title: '高收入者追加稅',
-    subtitle: '再分配或人才出走',
+    subtitle: '所得再分配 vs. 人才出走',
     description: '加稅支持弱勢，卻可能引發人才與資金外流。'
   },
   {
     key: 'surveillance',
     title: '城市 AI 監控網',
-    subtitle: '公共安全與隱私界線',
+    subtitle: '公共安全 vs. 隱私界線',
     description: '智慧監控提升治安，也讓政府監控公民更容易。'
   },
   {
     key: 'housing',
     title: '住宅限購與租金上限',
-    subtitle: '守護居住 vs 市場失靈',
+    subtitle: '居住正義 vs. 市場失靈',
     description: '限制短租與多屋，青年支持，房東憂心供給縮水。'
   },
   {
     key: 'immigration',
     title: '移工長期居留配額',
-    subtitle: '產業需求與社會承擔',
+    subtitle: '產業需求 vs. 社會承擔',
     description: '提高居留配額穩定勞動力，但社會承擔與融合成為疑慮。'
   },
   {
     key: 'speech',
     title: '數位言論平台責任',
-    subtitle: '假訊息與言論自由',
+    subtitle: '抑制假訊息 vs. 言論自由',
     description: '要求平台快速下架爭議內容，可能降低誤導，也可能演變為政治審查。'
   },
   {
     key: 'healthcare',
     title: '健康資料共享政策',
-    subtitle: '公共安全與個人隱私',
+    subtitle: '公共安全 vs. 個人隱私',
     description: '疫苗護照與資料交換有助防疫，但個資與差別待遇風險升高。'
   }
 ];
