@@ -25,7 +25,7 @@
           <p class="dashboard__value" id="submission-count">0</p>
         </div>
         <div>
-          <p class="dashboard__label">總票數（正票＋負票）</p>
+          <p class="dashboard__label">已提交票數</p>
           <p class="dashboard__value" id="total-votes">0</p>
         </div>
         <div>
@@ -190,12 +190,12 @@
         ...Array.from(negatives.values())
       );
       if (totalVotesEl) totalVotesEl.textContent = formatSigned(totalVotes);
-      const totalsAbs = topics.map((t) => {
+      const totalsSigned = topics.map((t) => {
         const pos = positives.get(t.key) ?? 0;
         const neg = negatives.get(t.key) ?? 0;
-        return { title: t.title, key: t.key, total: pos + neg, pos, neg };
+        return { title: t.title, key: t.key, total: pos - neg, pos, neg };
       });
-      const top3List = totalsAbs
+      const top3List = totalsSigned
         .slice()
         .sort((a, b) => b.total - a.total)
         .slice(0, 3);
@@ -228,10 +228,10 @@
                   ${isHot ? '<span class="chart__badge chart__hot">Hot</span>' : ''}
                 </span>
                 <span class="chart__numbers">
-                  <span class="chart__neg">-${neg}</span>
-                  <span class="chart__sep">／</span>
-                  <span class="chart__pos">+${pos}</span>
-                  <span class="chart__sep">／</span>
+                  <span class="chart__neg">(${formatSigned(-neg)})</span>
+                  <span class="chart__sep">＋</span>
+                  <span class="chart__pos">(${formatSigned(pos)})</span>
+                  <span class="chart__sep">＝</span>
                   <span class="chart__total">${totalLabel} 票</span>
                 </span>
               </div>
