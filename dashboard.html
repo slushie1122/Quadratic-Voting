@@ -180,7 +180,7 @@
             totalVotes += val;
           } else if (val < 0) {
             negatives.set(t.key, (negatives.get(t.key) ?? 0) + Math.abs(val));
-            totalVotes += val;
+            totalVotes += Math.abs(val);
           }
         });
       });
@@ -189,7 +189,7 @@
         ...Array.from(positives.values()),
         ...Array.from(negatives.values())
       );
-      if (totalVotesEl) totalVotesEl.textContent = formatSigned(totalVotes);
+      if (totalVotesEl) totalVotesEl.textContent = totalVotes;
       const totalsSigned = topics.map((t) => {
         const pos = positives.get(t.key) ?? 0;
         const neg = negatives.get(t.key) ?? 0;
