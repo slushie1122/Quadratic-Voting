@@ -25,7 +25,7 @@
           <p class="dashboard__value" id="submission-count">0</p>
         </div>
         <div>
-          <p class="dashboard__label">總票數（正負絕對值合計）</p>
+          <p class="dashboard__label">總票數（正票＋負票）</p>
           <p class="dashboard__value" id="total-votes">0</p>
         </div>
         <div>
@@ -145,6 +145,8 @@
       return d.toLocaleString('zh-TW', { hour12: false });
     };
 
+    const formatSigned = (num) => (num > 0 ? `+${num}` : `${num}`);
+
     const renderChart = async () => {
       const submissions = await loadSubmissions();
       const chart = document.getElementById('chart');
@@ -178,7 +180,7 @@
             totalVotes += val;
           } else if (val < 0) {
             negatives.set(t.key, (negatives.get(t.key) ?? 0) + Math.abs(val));
-            totalVotes += Math.abs(val);
+            totalVotes += val;
           }
         });
       });
@@ -187,7 +189,7 @@
         ...Array.from(positives.values()),
         ...Array.from(negatives.values())
       );
-      if (totalVotesEl) totalVotesEl.textContent = totalVotes;
+      if (totalVotesEl) totalVotesEl.textContent = formatSigned(totalVotes);
       const totalsAbs = topics.map((t) => {
         const pos = positives.get(t.key) ?? 0;
         const neg = negatives.get(t.key) ?? 0;
@@ -206,12 +208,16 @@
           const negRatio = neg > 0 ? neg / max : 0;
           const rank = top3Map.get(topic.key);
           const badge = rank ? `<span class="chart__badge rank-${rank}">Top ${rank}</span>` : '';
-          const total = pos + neg;
+          const totalMagnitude = pos + neg;
+          const netTotal = pos - neg;
           const isHot =
-            total >= 10 && pos > 0 && neg > 0 && Math.abs(pos - neg) / total <= 0.2;
+            totalMagnitude >= 10 &&
+            pos > 0 &&
+            neg > 0 &&
+            Math.abs(pos - neg) / totalMagnitude <= 0.2;
           const milestone =
-            total >= 100 ? `${Math.floor(total / 100) * 100}+` : null;
-          const totalLabel = total >= 0 ? `+${total}` : `${total}`;
+            totalMagnitude >= 100 ? `${Math.floor(totalMagnitude / 100) * 100}+` : null;
+          const totalLabel = formatSigned(netTotal);
           return `
             <div class="chart__row" role="listitem">
               <div class="chart__label">
