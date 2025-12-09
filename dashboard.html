@@ -10,7 +10,34 @@
 
 <body data-theme="light">
   <div class="grain" aria-hidden="true"></div>
-  <main class="experience dashboard">
+  <div
+    class="auth-overlay"
+    id="auth-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="auth-title"
+  >
+    <div class="auth-overlay__card">
+      <p class="auth-overlay__eyebrow">Protected</p>
+      <h1 id="auth-title">統計面板已鎖定</h1>
+      <p class="auth-overlay__hint">請輸入密碼以查看即時統計。</p>
+      <label class="auth-overlay__field">
+        <span>密碼</span>
+        <input
+          id="auth-password"
+          type="password"
+          autocomplete="current-password"
+          placeholder="輸入密碼"
+        />
+      </label>
+      <p class="auth-overlay__error" id="auth-error" aria-live="polite" hidden>密碼錯誤，請再試一次。</p>
+      <div class="auth-overlay__actions">
+        <button class="ghost" type="button" id="auth-submit">解鎖</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="experience dashboard" hidden>
     <header class="stage__header">
       <span class="stage__label">統計面板</span>
       <h2>即時統計（連線 Supabase）</h2>
@@ -51,8 +78,15 @@
     const SUPABASE_URL = 'https://ajhskxfarxgebfbthtke.supabase.co';
     const SUPABASE_ANON_KEY =
       'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFqaHNreGZhcnhnZWJmYnRodGtlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQ3NzA2MjQsImV4cCI6MjA4MDM0NjYyNH0.GeblW3Cnm3USBNYz3MVVTOKVGbx43evMHPIn83TbEb0';
+    const DASHBOARD_PASSWORD = 'dashboard2025';
     const TABLE_NAME = 'votes';
     const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    const mainContent = document.querySelector('main.experience.dashboard');
+    const authOverlay = document.getElementById('auth-overlay');
+    const authPasswordInput = document.getElementById('auth-password');
+    const authError = document.getElementById('auth-error');
+    let realtimeChannel = null;
+    let dashboardInitialized = false;
 
     const topics = [
       { key: 'education', title: '課綱一致化改革' },
@@ -248,8 +282,7 @@
         .join('');
     };
 
-    document.addEventListener('DOMContentLoaded', () => {
-      renderChart();
+    const bindDashboardControls = () => {
       const refreshBtn = document.getElementById('refresh-chart');
       if (refreshBtn) refreshBtn.addEventListener('click', renderChart);
       const resetBtn = document.getElementById('reset-records');
@@ -261,15 +294,16 @@
       }
       const exportBtn = document.getElementById('export-csv');
       if (exportBtn) exportBtn.addEventListener('click', exportCsv);
+    };
 
-      // Realtime：監聽 votes 表有新紀錄就刷新圖表
+    const initRealtime = () => {
+      if (realtimeChannel) return;
       let renderTimer = null;
       const scheduleRender = () => {
         if (renderTimer) clearTimeout(renderTimer);
         renderTimer = setTimeout(renderChart, 150);
       };
-
-      const channel = supabase
+      realtimeChannel = supabase
         .channel('votes-realtime')
         .on(
           'postgres_changes',
@@ -281,10 +315,62 @@
             console.warn('Realtime channel error, falling back to manual refresh');
           }
         });
-
       window.addEventListener('beforeunload', () => {
-        if (channel) supabase.removeChannel(channel);
+        if (realtimeChannel) supabase.removeChannel(realtimeChannel);
       });
+    };
+
+    const setupDashboard = () => {
+      if (dashboardInitialized) return;
+      dashboardInitialized = true;
+      renderChart();
+      bindDashboardControls();
+      initRealtime();
+    };
+
+    const showAuthError = (message) => {
+      if (!authError) return;
+      authError.textContent = message;
+      authError.hidden = false;
+    };
+
+    const clearAuthError = () => {
+      if (authError) authError.hidden = true;
+    };
+
+    const unlockDashboard = () => {
+      clearAuthError();
+      if (authOverlay) {
+        authOverlay.classList.add('is-hidden');
+        setTimeout(() => authOverlay.remove(), 240);
+      }
+      if (mainContent) mainContent.hidden = false;
+      setupDashboard();
+    };
+
+    const handleAuthSubmit = () => {
+      if (!authPasswordInput) return;
+      if (authPasswordInput.value.trim() === DASHBOARD_PASSWORD) {
+        unlockDashboard();
+      } else {
+        showAuthError('密碼錯誤，請再試一次。');
+        authPasswordInput.value = '';
+        authPasswordInput.focus();
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (authPasswordInput) {
+        authPasswordInput.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') {
+            event.preventDefault();
+            handleAuthSubmit();
+          }
+        });
+        authPasswordInput.focus();
+      }
+      const submitBtn = document.getElementById('auth-submit');
+      if (submitBtn) submitBtn.addEventListener('click', handleAuthSubmit);
     });
   </script>
 </body>

@@ -282,10 +282,6 @@ const setup = () => {
       }
     });
   }
-  const dashboardBtn = document.getElementById('open-dashboard');
-  if (dashboardBtn) {
-    dashboardBtn.addEventListener('click', openDashboardWithPassword);
-  }
 };
 
 if (document.readyState === 'loading') {
@@ -293,12 +289,3 @@ if (document.readyState === 'loading') {
 } else {
   setup();
 }
-
-const openDashboardWithPassword = () => {
-  const pass = window.prompt('請輸入查看即時統計的密碼');
-  if (pass === 'admin') {
-    window.open('./dashboard.html', '_blank');
-  } else if (pass !== null) {
-    window.alert('密碼錯誤');
-  }
-};
