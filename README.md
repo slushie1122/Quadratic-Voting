@@ -1,22 +1,86 @@
-# 制度的陷阱：從遊戲理解平方投票法  
-以遊戲體驗認識民主制度的可能與限制
+# 升級民主：平方投票法（Upgrading Democracy: Quadratic Voting）  
 
-# 目錄
+## 策展研究
 
-- 策展互動體驗  
-- 摘要（Abstract）  
-- 前言（Introduction）  
-- 第一章　議題行銷分析：如何讓制度被看懂？  
-- 第二章　設計與執行解方：100 VC 平方投票思想實驗  
-- 第三章　理論與制度意涵  
-- 第四章　結論與展覽反思  
-- 參考文獻（References）  
+### 社會創新
+
+- [2025 數位行銷專題研討 第四組](https://drive.google.com/open?id=1b2O28Suq4CPj8qGE7rSWis3EiTAh1JN_)
+
+### 理論基礎
+
+- [平方投票法（Quadratic Voting）](https://drive.google.com/open?id=1qYheq9cjqfJvFcC-OgkYRrukEO2dbOJW)
+- ![平方投票法（Quadratic Voting）](https://hackmd.io/_uploads/r1uW4gHGWg.png)
+
+### 體驗互動遊戲
+
+- [平方投票思想實驗｜100 VC](https://slushie1122.github.io/Quadratic-Voting/)
+![平方投票思想實驗｜100 VC](https://hackmd.io/_uploads/rJy_mDmGZe.png)
 
 ---
 
-## 策展互動體驗
+## SDGs 精準對應
 
-[平方投票思想實驗｜100 VC](http://172.20.10.4:3000/)
+### **SDG 4：優質教育（Quality Education）**
+
+Target 4.7 — 公民意識、制度理解、參與教育
+
+- 本展覽以遊戲化方式提升公民教育理解度  
+- 降低制度學習門檻，提供人人可參與的民主教育  
+
+### **SDG 9：產業、創新與基礎設施（Industry, Innovation, Infrastructure）**
+
+Target 9.5 — 推動研究與創新
+
+- 「民主制度創新」的 prototype（QV），完全符合「社會創新」。
+
+### **SDG 10：減少不平等（Reduced Inequalities）**
+
+Target 10.2 — 促進政治包容
+Target 10.3 — 平等機會
+
+平方投票的精神是：
+
+> 讓少數但強烈的偏好被看見
+
+即符合 SDG 10 強調的：
+
+- 包容性決策  
+- 弱勢者的政治參與  
+- 減少公共決策中的象徵性壓制  
+
+### **SDG 12：負責任的消費與生產（Responsible Consumption & Production）**
+
+Target 12.8 — 資訊透明與永續觀念普及
+
+- QV + Dashboard = 透明資訊公開模式
+
+### **SDG 16：和平、正義與健全制度（Peace, Justice and Strong Institutions）**
+
+Target 16.7 — 確保包容、參與且具代表性的決策制定。
+
+平方投票屬於：
+
+- 民主制度創新  
+- 公共治理工具  
+- 增強參與式決策的透明度與多元性  
+
+非常直接對應 SDG 16 中的：
+
+- *16.7：確保包容、參與且具代表性的決策制定*  
+
+### **SDG 17：夥伴關係（Partnerships for the Goals）**
+
+Target 17.17 — 跨領域協作
+
+此專題由：
+
+- 社會科學  
+- 數位行銷  
+- 資訊設計  
+- 公共治理  
+- 教育科技  
+
+跨領域整合完成，符合 SDG 17 的精神。
 
 ---
 
@@ -76,6 +140,8 @@
 3. **多數暴力與少數壓制**  
    少數群體即使非常在乎，也很難阻止對自己不利的決策。
 
+---
+
 ### 2. 平方投票的核心直覺：用成本揭露在乎程度
 
 平方投票並沒有否定投票，而是改變了「一票的成本」：
@@ -83,9 +149,7 @@
 - 每個人一開始擁有 **相同數量的發言權積分（Voice Credits, VC）**。  
 - 你可以對某議題投 1 票、2 票、3 票……甚至很多票。  
 - 但 **成本隨票數平方成長**：  
-  \[
-  \text{Cost} = v^2
-  \]
+  `Cost = v^2`
   - 1 票 → 1 VC  
   - 2 票 → 4 VC  
   - 3 票 → 9 VC  
@@ -102,7 +166,7 @@
 
 ---
 
-# 第一章　議題行銷分析：如何讓制度被看懂？
+## 第一章　議題行銷分析：如何讓制度被看懂？
 
 本章不是為了做大補湯，而是回答一個實際問題：  
 > *一個抽象的制度，要怎麼被一般觀眾理解？*
@@ -111,7 +175,7 @@
 
 ---
 
-## 1. 黃金圈理論（Golden Circle）  
+### 1. 黃金圈理論（Golden Circle）  
 用來定義展覽敘事「為什麼做？怎麼做？做什麼？」
 
 | 層次 | 內容 | 在本專題中的詮釋 |
@@ -124,10 +188,10 @@
 
 ---
 
-## 2. AIDMA／AISAS：讓參與者願意開始、願意分享
+### 2. AIDMA／AISAS：讓參與者願意開始、願意分享
 平方投票聽起來難，但行為路徑可以是簡單的：
 
-### 行為旅程（AISAS）
+#### 行為旅程（AISAS）
 - **Attention**　「100 VC？這什麼？」（視覺吸睛）
 - **Interest**　看到「＋」「−」按鈕與剩餘 VC 開始好奇
 - **Search**　查什麼是 QV／或詢問同伴
@@ -138,7 +202,7 @@
 
 ---
 
-## 3. Cognitive Framing（框架設定）
+### 3. Cognitive Framing（框架設定）
 制度再好，沒有被正確框架，就會被誤解。
 
 本展覽為平方投票設定的框架不是：
@@ -157,14 +221,14 @@
 
 ---
 
-## 第二章　100 VC 平方投票思想實驗
+## 設計與執行解方：100 VC 平方投票思想實驗
 
 為了讓平方投票從抽象概念變成具體體驗，本展覽設計了一個單純、可重複、適合現場使用的互動系統：**100 VC 平方投票思想實驗**。
 
-### 2-1　基本設定：100 VC 與八個公共議題
+### 2-1　基本設定：100 VC 與八項公共議題
 
 - 每位參與者進入系統時，獲得 **100 VC（發言權積分）**。  
-- 螢幕上會出現 **八個公共議題**（例如：通勤補助、校園空間、宿舍資源、課程安排等）。  
+- 螢幕上會出現 **八項公共議題**（例如：氣候、教育、交通以及醫療等）。  
 - 每個議題下都可以投：
   - **正票（＋）**：表示支持  
   - **負票（−）**：表示反對  
@@ -186,9 +250,9 @@
 
 在開始投票前，畫面會短暫出現引導文字，例如：
 
-- 你願意把最多的 VC 投在哪一個議題上？  
-- 為了守住這個議題，你願意犧牲多少對其他議題的影響力？  
-- 有沒有一些議題，你其實可以接受「不表態」或「只給 1 票」？  
+- 你願意把最多的 VC 投在哪一項議題上？  
+- 為了守住這項議題，你願意犧牲多少對其他議題的影響力？  
+- 有沒有一些議題，你其實可以接受「不表態」或「只投 1 票」？  
 
 這組提問不是要給出答案，而是提醒：
 
@@ -198,7 +262,7 @@
 ### 2-4　送出與重置：適合展覽現場輪流體驗
 
 - 當參與者確定分配後，點擊「送出」。  
-- 系統會將這一組投票結果儲存在 **本機（localStorage）** 中。  
+- 系統會將這一組投票結果儲存在 **雲端資料表** 中。  
 - 畫面自動重置為 0 票與 100 VC，方便下一位參與者直接開始。  
 - 整個流程不需登入、不需個資，適合快速輪替、多人使用。
 
@@ -213,13 +277,7 @@
   - 累積成本（反映整體在乎的強度）  
 - 可標記：
   - **Top Issue**：目前整體最被重視的議題  
-  - **Hot**：最近成長最快的議題  
-
-管理者可以：
-
-- 手動刷新統計  
-- 清除全部紀錄（重啟一輪實驗）  
-- 匯出 CSV 供後續分析或課堂使用  
+  - **Hot Issue**：目前競爭激烈的議題  
 
 透過這個 Dashboard，參與者不只看到「自己的」選擇，也能看到所有人加總後的偏好圖像。
 
@@ -258,12 +316,10 @@
 ### 3-3　不完美中的限制：資源與資訊的不對稱
 
 平方投票至少有兩個需要被誠實面對的限制：
-
-1. **資源差距問題（在真實政治中）**  
+1. **資源差距問題**  
    若發言權積分可以被買賣，富者仍然可能購買更多影響力。  
    在本展覽的實驗中，我們刻意設定 **每個人都拿到同樣 100 VC，且不能交易**，  
    以便專注在「偏好強度」本身，而非財富差距。  
-
 2. **資訊負擔與理解門檻**  
    不同於「打勾選一格」的直覺，多數人一開始會對成本平方有點困惑。  
    因此，我們刻意將體驗設計成 **少議題、簡介明確、介面即時回饋**，  
@@ -317,140 +373,35 @@
 
 ## 參考文獻（References）
 
-- Posner, E. A., & Weyl, E. G. (2018). *Radical Markets: Uprooting Capitalism and Democracy for a Just Society*. Princeton University Press.  
-- Posner, E. A., & Weyl, E. G. (2014). “Quadratic Voting as Efficient Corporate Governance.” *University of Chicago Law Review*, 81, 251–276.  
-- Lalley, S., & Weyl, E. G. (2018). “Quadratic Voting: How Mechanism Design Can Radicalize Democracy.” *American Economic Association Papers and Proceedings*.  
-- Buchanan, J. M., & Tullock, G. (1962). *The Calculus of Consent*. University of Michigan Press.  
 - Arrow, K. J. (1951). *Social Choice and Individual Values*. Yale University Press.  
+- Buchanan, J. M., & Tullock, G. (1962). *The Calculus of Consent*. University of Michigan Press.  
+- Lalley, S., & Weyl, E. G. (2018). “Quadratic Voting: How Mechanism Design Can Radicalize Democracy.” *American Economic Association Papers and Proceedings*.  
+- Posner, E. A., & Weyl, E. G. (2014). “Quadratic Voting as Efficient Corporate Governance.” *University of Chicago Law Review*, 81, 251–276.  
+- Posner, E. A., & Weyl, E. G. (2018). *Radical Markets: Uprooting Capitalism and Democracy for a Just Society*. Princeton University Press.  
 
 ---
 
-## Author
+## 參考工具（Tools）
+
+- Google AI. (2025). *Gemini 3* (September 13–December 12 version) [Large language model]. https://gemini.google.com/app
+- Google AI. (2025). *NotebookLM* (September 13–December 12 version) [Large language model]. https://gemini.google.com/app
+- OpenAI. (2025). *ChatGPT 5.1* (September 13–December 12 version) [Large language model]. https://chatgpt.com/
+- Figma, Inc. (2025). *Figma*
+
+---
+## 研究者（Author）
 
 徐若曦  Ruo-Hsi (Slushie) Hsu  
 國立臺北大學 數位行銷進修學士學位學程  
 雙主修：社會工作學系｜輔修：經濟學系（預計修畢專業課程）｜四年級  
-指導教師：廖凱弘 助理教授
-
-
-
-Old
-# 制度的陷阱：從遊戲看見國家與社會的失敗
-以遊戲體驗並理解公共經濟 x 社會心理 x 政治困境
-
-# 目錄
-
-策展互動體驗
-摘要（Abstract）
-前言（Introduction）
-第一章　議題行銷分析
-第二章　制度設計與執行解方
-第三章　理論分析與社會意涵
-第四章　結論與展覽反思
-參考文獻（References）
-
----
-## 策展互動體驗
-[制度裂縫｜Visual mock](https://slushiehsu3.lionfree.net/)
+Bachelor’s Degree Program in Digital Marketing, National Taipei University, Taiwan
+Double Major in Social Work | Minor in Economics (completing full curriculum) | Year 4
 
 ---
 
-## 摘要（Abstract）
+## 指導教師（Advisors）
 
-本研究以「平方投票（Quadratic Voting）」制度為分析核心，結合議題行銷理論、公共選擇理論與社會學批判視角，探討民主制度中「形式平等」與「實質公平」之間的張力。展覽以遊戲化學習與互動式體驗為方法，透過模擬投票成本平方化的決策過程，讓參與者親身體驗制度在理性與不公之間的矛盾運作。研究同時運用黃金圈理論、商業模式九宮格、STEEPLED、SWOT 與 4P/4C 等多重議題行銷模型，構建制度教育的策略分析框架，並結合三項指數—制度公平指數（IFI）、社會滿意度（SSI）、弱勢參與率（MPI）—進行制度效能模擬。研究結果顯示，當投票被量化、偏好被定價、行為被理性化時，民主的倫理意涵將逐漸轉化為效率導向的技術結構。制度表面上的開放與平等，實則掩蓋了權力的再製與資源的不對稱。透過議題行銷的教育性包裝，本展覽不僅揭示制度的限制，更嘗試在反思中重新尋找民主的價值基礎。制度的真正公平不在於規則的對稱，而在於是否能讓所有人被聽見與被理解，唯有在不斷的制度反思與公共對話中，民主的真義方能被重新定義。
-
----
-
-## 前言（Introduction）
-
-制度的設計向來被視為文明社會的理性象徵，然而，理性並不必然帶來正義。民主制度以「一人一票」為信條，象徵形式上的平等，卻在現實中常被權力結構與經濟差距扭曲。當公平被簡化為數學平均，當自由被量化為成本選擇，制度便逐漸喪失了倫理的溫度與人性的深度。本展覽《制度的陷阱：從遊戲看見國家與社會的失敗》正是在此反思基礎上誕生，旨在以「制度模擬」的形式揭露民主表象下的權力機制，並藉由議題行銷的教育手法，促使公眾重新思考「何謂真正的公平」。
-
-平方投票作為公共選擇理論中的制度創新，試圖以成本平方化的方式修正多數決的侷限，使個體能依偏好強度表達意見。理論上，它是對中位選民偏差與偏好循環的制度修補；然而在現實中，此機制卻可能強化富者優勢，讓表達權變成資本權的延伸。制度從公平的保障者轉變為不平等的再製者，這種理性設計的自我矛盾正是現代自由主義的縮影。展覽以此制度為載體，透過互動體驗、即時數據與社會指標，構建出一個可被觀察、被辯論、被再思考的「民主實驗場」。
-
----
-
-## 第一章　議題行銷分析
-
-| 理論模型 | 核心概念 | 在展覽中的應用 |
-|------------|------------|----------------|
-| 黃金圈理論（Golden Circle） | 從 Why→How→What 定義行動目的 | 說明展覽如何以「公平的幻覺」喚醒制度反思。 |
-| 商業模式九宮格（Business Model Canvas） | 用九個模組分析價值創造結構 | 說明展覽的價值邏輯、目標族群與資源配置。 |
-| STEEPLED 分析 | 宏觀環境的八構面分析：社會、科技、經濟、環境、政治、法律、倫理、人口 | 評估展覽的外部影響，如 AI 決策、民主教育與制度倫理。 |
-| SWOT 分析 | 優勢、劣勢、機會、威脅四象限 | 解析展覽的教育性與制度誤解風險。 |
-| 4P/4C 分析 | 行銷導向（Product, Price, Place, Promotion）消費者導向（Customer, Cost, Convenience, Communication） | 探討展覽作為教育產品的價值與傳播策略。 |
-| AIDMA／AISAS 模型 | 消費行為歷程模型 | 模擬觀眾從注意、興趣、搜尋、行動到分享的體驗旅程。 |
-| STP 理論 | 市場區隔、目標定位、形象建立 | 定位展覽在校園公民教育與制度創新之間的角色。 |
-| 框架理論（Cognitive Framing） | 議題的詮釋方式即權力 | 對比「理性民主的希望」與「效率邏輯的陷阱」。 |
-| 價值共創理論（Value Co-creation） | 使用者與組織共同創造意義 | 參與者的投票與行為生成展覽的社會數據。 |
-| 4R 模型 | Relationship, Reaction, Relevance, Reward | 建立情感連結與學習回饋。 |
-| 三重底線模型 | People, Planet, Profit | 衡量展覽的教育影響與永續性。 |
-| 議題設定與沉默螺旋理論 | 媒體設定公共議題與沉默少數 | 模擬少數意見被壓抑的社會現象。 |
-| 計畫行為理論（TPB） | 態度、主觀規範與行為意圖 | 分析觀眾在體驗後的制度態度變化。 |
-| 社會擴散理論 | 創新擴散與採用過程 | 展覽如何成為制度教育的創新模式。 |
-| 情感品牌與敘事行銷 | 以故事產生共鳴 | 用「公平的代價」作為展覽敘事核心。 |
-
----
-
-## 第二章　制度設計與執行解方
-
-| 階段 | 步驟 | 操作內容 | 教育意涵 |
-|------|------|------------|------------|
-| 制度導入 | 步驟一：理念宣告 | 提出「一人一票真的公平嗎？」問題，引導參與者思考多數決侷限。 | 建立反思動機。 |
-|  | 步驟二：制度說明 | 說明投票成本公式 \(Cost=v^2\) 並介紹遊戲規則。 | 讓參與者理解理性選擇與制度代價。 |
-| 制度實踐 | 步驟三：議題投票 | 模擬公共政策議題投票，如通勤補助、資源分配。 | 體驗偏好表達與決策博弈。 |
-|  | 步驟四：即時回饋 | 以 AI 即時計算 IFI、SSI、MPR 指數並投影結果。 | 使制度透明化並促進社會觀察。 |
-| 制度反思 | 步驟五：集體討論 | 主持人帶領觀眾討論制度公平與倫理問題。 | 形成反思性學習。 |
-
----
-
-## 第三章　理論分析與社會意涵
-
-| 理論視角 | 核心學者 | 理論主張 | 在展覽中的體現 |
-|------------|------------|------------|----------------|
-| 公共選擇理論 | Buchanan, Tullock | 政治決策如同市場博弈 | 平方投票以成本內化偏好強度。 |
-| 亞羅不可能定理 | Kenneth Arrow | 無法滿足所有公平條件 | 顯示制度公平的邏輯極限。 |
-| 孔多塞悖論 | Condorcet | 多數決可能循環矛盾 | 揭示制度不穩定性。 |
-| 中位選民理論 | Hotelling, Downs | 政策傾向中庸、忽略少數 | 展覽模擬多數暴力與弱勢沉默。 |
-| 自由主義失敗 | Patrick Deneen | 理性制度反成壓迫結構 | 體現公平幻覺的哲學根源。 |
-| 制度排除理論 | Acemoglu & Robinson | 制度為強者服務 | 顯示資源分配不均的制度現象。 |
-| 規訓權力理論 | Michel Foucault | 權力透過自我監控運作 | 模擬理性化的自由監控社會。 |
-| 象徵資本理論 | Pierre Bourdieu | 權力以文化形式再製 | 人氣制度象徵象徵資本不均。 |
-| 沉默螺旋理論 | Elisabeth Noelle-Neumann | 少數者因輿論壓力而噤聲 | 模擬民主中意見壓抑的心理。 |
-
----
-
-## 第四章　結論與展覽反思
-
-| 面向 | 內容 | 意涵 |
-|------|------|------|
-| 教育價值 | 體驗制度不公與公平的代價 | 促進批判性思考與公民覺察。 |
-| 社會反思 | 民主幻覺與自由困境 | 顯示理性制度的倫理界限。 |
-| 制度警示 | 效率導向掩蓋人性需求 | 提醒制度設計須兼顧情感與倫理。 |
-| 公民行動 | 從體驗走向公共討論 | 展覽作為民主教育的起點。 |
-| 哲學啟示 | 公平不是平分，而是理解差異 | 建立多元與包容的民主觀。 |
-
----
-
-## 參考文獻（References）--TBC
-
-- Acemoglu, D., & Robinson, J. (2012). *Why Nations Fail: The Origins of Power, Prosperity, and Poverty*. Crown Business.
-- Ansell, B. (2023). *Why Politics Fails*. Penguin Books.
-- Arrow, K. (1951). *Social Choice and Individual Values*. Yale University Press.
-- Bourdieu, P. (1984). *Distinction: A Social Critique of the Judgement of Taste*. Harvard University Press.
-- Buchanan, J. M., & Tullock, G. (1962). *The Calculus of Consent*. University of Michigan Press.
-- Condorcet, N. (1785). *Essai sur l'application de l'analyse à la probabilité des décisions rendues à la pluralité des voix*.
-- Deneen, P. (2018). *Why Liberalism Failed*. Yale University Press.
-- Foucault, M. (1975). *Discipline and Punish: The Birth of the Prison*. Gallimard.
-- North, D. (1993). *Economic Performance Through Time* (Nobel Lecture).
-- Noelle-Neumann, E. (1974). *The Spiral of Silence: Public Opinion—Our Social Skin*. University of Chicago Press.
-
----
-
-## Author
-國立臺北大學 數位行銷進修學士學位學程
-徐若曦  Ruo-Hsi (Slushie) Hsu
-雙主修：社會工作學系｜輔修：經濟學系（預計修畢專業課程）｜四年級
-E-mail: slushy1117@gmail.com｜Tel: +886-910-160-175｜Student ID: 311159023
-指導教師：廖凱弘 助理教授
-
----
+廖凱弘 助理教授
+Assistant Professor Liao, Kai-Hung
+蔡家昌 助理教授
+Assistant Professor Tsai, Chia-Chang
