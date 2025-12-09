@@ -4,31 +4,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>即時統計｜平方投票思想實驗</title>
+  <title>平方投票思想實驗｜即時統計</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 
 <body data-theme="light">
   <div class="grain" aria-hidden="true"></div>
-  <div
-    class="auth-overlay"
-    id="auth-overlay"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="auth-title"
-  >
+  <div class="auth-overlay" id="auth-overlay" role="dialog" aria-modal="true" aria-labelledby="auth-title">
     <div class="auth-overlay__card">
       <p class="auth-overlay__eyebrow">Protected</p>
       <h1 id="auth-title">統計面板已鎖定</h1>
       <p class="auth-overlay__hint">請輸入密碼以查看即時統計。</p>
       <label class="auth-overlay__field">
         <span>密碼</span>
-        <input
-          id="auth-password"
-          type="password"
-          autocomplete="current-password"
-          placeholder="輸入密碼"
-        />
+        <input id="auth-password" type="password" autocomplete="current-password" placeholder="輸入密碼" />
       </label>
       <p class="auth-overlay__error" id="auth-error" aria-live="polite" hidden>密碼錯誤，請再試一次。</p>
       <div class="auth-overlay__actions">
