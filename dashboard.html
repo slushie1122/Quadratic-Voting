@@ -215,11 +215,15 @@
       const totalsSigned = topics.map((t) => {
         const pos = positives.get(t.key) ?? 0;
         const neg = negatives.get(t.key) ?? 0;
-        return { title: t.title, key: t.key, total: pos - neg, pos, neg };
+        const magnitude = pos + neg;
+        return { title: t.title, key: t.key, total: pos - neg, pos, neg, magnitude };
       });
       const top3List = totalsSigned
         .slice()
-        .sort((a, b) => b.total - a.total)
+        .sort((a, b) => {
+          if (b.magnitude === a.magnitude) return b.total - a.total;
+          return b.magnitude - a.magnitude;
+        })
         .slice(0, 3);
       const top3Map = new Map(top3List.map((item, idx) => [item.key, idx + 1]));
       chart.innerHTML = topics
